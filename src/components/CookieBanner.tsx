@@ -34,7 +34,7 @@ const CookieBanner: React.FC = () => {
               <p className="font-montserrat text-[11px] text-white/50 tracking-tight leading-relaxed max-w-[240px]">
                 We utilize cookie protocols to optimize our infrastructure engineering and measure market resonance.
               </p>
-              
+
               <div className="flex justify-start">
                 <button
                   onClick={handleAccept}

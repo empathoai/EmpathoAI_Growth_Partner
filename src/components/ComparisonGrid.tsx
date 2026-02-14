@@ -9,7 +9,7 @@ const ComparisonGrid: React.FC = () => {
         {/* Section Header: Mirrored from SectorDominance for absolute consistency */}
         <div className="mb-20 md:mb-32">
           <div className="overflow-hidden mb-4">
-            <motion.h2 
+            <motion.h2
               initial={{ y: "100%" }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
@@ -18,7 +18,7 @@ const ComparisonGrid: React.FC = () => {
               DIFFERENTIAL_ANALYSIS_V3
             </motion.h2>
           </div>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -30,7 +30,7 @@ const ComparisonGrid: React.FC = () => {
 
         {/* Grid: Mirrored Architecture from Methodology/SectorDominance */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 relative overflow-hidden">
-          
+
           {/* Side A: The Noise - Grayscale/Faded Legacy */}
           <motion.div
             className="bg-void p-10 md:p-16 flex flex-col justify-between min-h-[550px] md:min-h-[650px] group transition-all duration-1000 opacity-40 blur-[1px] hover:opacity-60 hover:blur-0 lg:border-r lg:border-white/5"
@@ -47,7 +47,7 @@ const ComparisonGrid: React.FC = () => {
               <span className="font-mono text-6xl md:text-8xl text-white/5 block leading-none select-none tracking-tighter">NOISE_A</span>
               <span className="font-mono text-sm md:text-base text-noise uppercase tracking-[0.4em] block opacity-50">Tactical Fragmentation</span>
             </div>
-            
+
             <div className="space-y-8 mt-12 md:mt-0">
               <h3 className="font-inter font-bold text-2xl md:text-3xl tracking-tight text-white/40 uppercase">Outbound Variance</h3>
               <ul className="space-y-6">
@@ -81,7 +81,7 @@ const ComparisonGrid: React.FC = () => {
               <span className="font-mono text-6xl md:text-8xl text-white/10 block leading-none select-none tracking-tighter">SIGNAL_B</span>
               <span className="font-mono text-sm md:text-base text-white uppercase tracking-[0.4em] block">Sovereign Infrastructure</span>
             </div>
-            
+
             <div className="space-y-8 mt-12 md:mt-0">
               <h3 className="font-inter font-bold text-2xl md:text-3xl tracking-tight text-white uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Revenue Engineering</h3>
               <ul className="space-y-6">

@@ -45,7 +45,7 @@ const Methodology: React.FC = () => {
                 <span className="font-mono text-6xl md:text-8xl text-noise/15 block leading-none">{phase.num}</span>
                 <span className="font-mono text-base md:text-lg text-noise uppercase tracking-[0.3em] block">{phase.label}</span>
               </div>
-              
+
               <div className="space-y-6 md:space-y-8 mt-12 md:mt-0">
                 <h3 className="font-inter font-bold text-3xl md:text-4xl tracking-tight text-white uppercase">{phase.title}</h3>
                 <p className="font-montserrat text-lg md:text-body-lg leading-relaxed opacity-60">

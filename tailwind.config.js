@@ -15,6 +15,9 @@ export default {
                 mono: ['Roboto Mono', 'monospace'],
                 inter: ['Inter', 'sans-serif'],
             },
+            letterSpacing: {
+                brutal: '-0.06em',
+            },
         },
     },
     plugins: [],

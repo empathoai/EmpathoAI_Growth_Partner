@@ -48,39 +48,47 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-void selection:bg-white selection:text-black overflow-x-hidden">
       {/* Sovereign Ghost Navigation */}
-      <nav 
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 px-6 md:px-12 py-5 flex justify-between items-center ${
-          scrolled 
-            ? 'bg-black/50 backdrop-blur-md border-b border-white/5 py-4' 
+      <nav
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled
+            ? 'bg-black/50 backdrop-blur-md border-b border-white/5 py-4'
             : 'bg-transparent border-b border-transparent'
-        }`}
+          }`}
       >
         <div className="flex flex-col md:flex-row md:items-center gap-0 md:gap-4">
-          <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-[0.2em] leading-none">
-            EMPATHOAI // SOVEREIGN_FRAMEWORK_V3
+          <div className="font-mono text-[10px] text-noise uppercase tracking-[0.2em] leading-none">
+            EMPATHO_FRAMEWORK_v2.0
+          </div>
+          {/* Extended Navigation */}
+          <div className="hidden lg:flex items-center gap-8 ml-8">
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors cursor-pointer">
+              Partner_Audit
+            </span>
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors cursor-pointer">
+              Methodology
+            </span>
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors cursor-pointer">
+              Success_Criteria
+            </span>
           </div>
         </div>
-        
-        <div className="flex items-center">
-          <button 
-            onClick={toggleForm}
-            className="institutional-btn font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] px-4 py-2 hover:bg-white hover:text-black transition-all duration-500"
-          >
-            APPLY FOR AUDIT
-          </button>
-        </div>
+
+        <button
+          onClick={toggleForm}
+          className="institutional-btn font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] px-4 py-2 hover:bg-white hover:text-black transition-all duration-500"
+        >
+          Request Institutional Access
+        </button>
       </nav>
 
       {/* Main Content */}
       <motion.div
-        animate={{ 
-          opacity: isAnyOverlayOpen ? 0 : 1, 
-          scale: isAnyOverlayOpen ? 0.98 : 1 
+        animate={{
+          opacity: isAnyOverlayOpen ? 0 : 1,
+          scale: isAnyOverlayOpen ? 0.98 : 1
         }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10 pt-16"
       >
-        {/* RESTRUCTURED FLOW */}
         <Hero onCtaClick={toggleForm} />
         <SectorDominance />
         <Mechanism />
@@ -89,23 +97,23 @@ const App: React.FC = () => {
         <Deployment />
         <Guarantee onCtaClick={toggleForm} />
         <FAQ />
-        
+
         <footer className="px-6 py-12 md:px-24 md:py-16 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-mono text-[10px] md:text-xs text-noise uppercase tracking-widest">
-            © 2025 EMPATHOAI. ALL RIGHTS RESERVED.
+            © 2024 EmpathoAI Agency. All Rights Reserved.
           </div>
           <div className="flex gap-8 font-mono text-[10px] md:text-xs text-noise uppercase tracking-widest">
-            <button 
+            <button
               onClick={togglePolicy}
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
             >
-              Privacy Protocol
+              Privacy_Protocol
             </button>
-            <button 
+            <button
               onClick={toggleTerms}
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
             >
-              Terms of Service
+              Terms_of_Service
             </button>
           </div>
         </footer>
@@ -122,6 +130,7 @@ const App: React.FC = () => {
         {isTermsOpen && <TermsOfService onClose={() => setIsTermsOpen(false)} />}
       </AnimatePresence>
       <CookieBanner />
+      <WhatsAppWidget />
     </div>
   );
 };

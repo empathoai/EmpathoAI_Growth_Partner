@@ -18,7 +18,7 @@ const NotFound: React.FC = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10"
         >
-          <motion.h1 
+          <motion.h1
             className="font-inter font-extrabold text-7xl md:text-[12rem] tracking-tighter uppercase leading-none text-white flex items-center justify-center"
             animate={{
               x: [0, -1, 1, -1, 0],
@@ -37,17 +37,17 @@ const NotFound: React.FC = () => {
         </motion.div>
 
         {/* Glitch Ghost Layers */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 font-inter font-extrabold text-7xl md:text-[12rem] tracking-tighter uppercase leading-none text-white opacity-20 mix-blend-screen pointer-events-none"
           animate={{
             x: [-4, 4, -2, 0],
             opacity: [0, 0.3, 0.1, 0],
             skewX: [0, 10, -10, 0]
           }}
-          transition={{ 
-            duration: 0.15, 
-            repeat: Infinity, 
-            repeatDelay: 3 
+          transition={{
+            duration: 0.15,
+            repeat: Infinity,
+            repeatDelay: 3
           }}
         >
           <span className="text-noise font-mono mr-2 md:mr-4">[</span>404<span className="text-noise font-mono ml-2 md:ml-4">]</span>
@@ -61,13 +61,13 @@ const NotFound: React.FC = () => {
             // Protocol Not Found.
           </h2>
           <p className="font-montserrat font-light text-lg md:text-xl text-white/50 leading-relaxed text-balance">
-            The architectural path you are trying to access is outside the Sovereign network. 
+            The architectural path you are trying to access is outside the Sovereign network.
             The connection has been terminated to preserve infrastructure integrity.
           </p>
         </div>
 
         <div className="pt-8">
-          <motion.a 
+          <motion.a
             href="/"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}

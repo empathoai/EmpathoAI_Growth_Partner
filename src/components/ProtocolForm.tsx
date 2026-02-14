@@ -53,7 +53,7 @@ const ProtocolForm: React.FC<ProtocolFormProps> = ({ onClose }) => {
         <span className="font-mono text-xs text-noise uppercase tracking-widest">
           Protocol Intake Phase: {step === 'PROCESSING' ? 'ANALYZING' : step}
         </span>
-        <button 
+        <button
           onClick={onClose}
           className="p-2 hover:bg-white/5 rounded-full transition-colors group"
         >
@@ -124,7 +124,7 @@ const ProtocolForm: React.FC<ProtocolFormProps> = ({ onClose }) => {
                 <h3 className="font-inter font-extrabold text-4xl md:text-6xl tracking-brutal brutal-heading uppercase mb-4">The Friction</h3>
                 <p className="font-montserrat text-noise text-sm uppercase tracking-widest">What is the exact bottleneck preventing 10x growth?</p>
               </div>
-              
+
               <div className="relative group">
                 <textarea
                   autoFocus
@@ -138,7 +138,7 @@ const ProtocolForm: React.FC<ProtocolFormProps> = ({ onClose }) => {
               </div>
 
               <p className="text-[10px] text-noise font-montserrat uppercase tracking-wider leading-relaxed opacity-60">
-                Al hacer clic en Submit Application, aceptas nuestra Política de Privacidad y otorgas consentimiento para recibir comunicaciones vía WhatsApp/SMS para fines de auditoría estratégica.
+                By clicking Submit Application, you agree to our Privacy Policy and consent to receive communications via WhatsApp/SMS for strategic auditing purposes.
               </p>
 
               <button

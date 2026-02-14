@@ -16,7 +16,7 @@ const CookiePolicy: React.FC<CookiePolicyProps> = ({ onClose }) => {
       className="fixed inset-0 z-[110] bg-void flex flex-col items-center justify-start overflow-y-auto pt-24 pb-32 px-6"
     >
       <div className="absolute top-12 right-12">
-        <button 
+        <button
           onClick={onClose}
           className="p-4 hover:bg-white/5 rounded-full transition-colors group"
         >

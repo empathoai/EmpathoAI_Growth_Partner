@@ -16,13 +16,13 @@ const Guarantee: React.FC<GuaranteeProps> = ({ onCtaClick }) => {
         className="relative z-10 max-w-5xl mx-auto"
       >
         <span className="font-mono text-sm md:text-base text-noise uppercase tracking-[0.4em] block mb-8">Performance Commitment</span>
-        
+
         <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 p-12 md:p-24 shadow-2xl">
           <h2 className="font-inter font-extrabold text-4xl sm:text-6xl md:text-8xl tracking-tighter uppercase mb-8 leading-none text-white">
             <span className="text-noise font-mono">[</span>45 Days<span className="text-noise font-mono">]</span> <br className="md:hidden" />
             or <span className="text-white/40">Zero</span> Fee.
           </h2>
-          
+
           <p className="font-montserrat text-lg md:text-2xl text-noise mb-12 md:mb-16 leading-relaxed max-w-3xl mx-auto">
             "We own the results. If institutional benchmarks are not met within 45 days of deployment, we work without fees until they are. Performance is non-negotiable."
           </p>

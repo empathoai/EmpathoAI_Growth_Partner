@@ -154,7 +154,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       <AnimatePresence>
         {isVoiceActive && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-auto bg-black/60 backdrop-blur-2xl"
+            className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto bg-black/60 backdrop-blur-2xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

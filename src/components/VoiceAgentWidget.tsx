@@ -18,7 +18,7 @@ const VoiceAgentWidget: React.FC = () => {
         {/* Tooltip */}
         <AnimatePresence>
           {isHovered && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
@@ -34,12 +34,12 @@ const VoiceAgentWidget: React.FC = () => {
         {/* Neural Pulse Container */}
         <div className="relative flex items-center justify-center w-14 h-14">
           {/* Animated Stroke Circles */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 border border-white/20 rounded-full"
             animate={{ scale: [1, 1.6], opacity: [0.4, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
           />
-          <motion.div 
+          <motion.div
             className="absolute inset-0 border border-white/10 rounded-full"
             animate={{ scale: [1, 2], opacity: [0.2, 0] }}
             transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeOut" }}
@@ -50,15 +50,15 @@ const VoiceAgentWidget: React.FC = () => {
             {/* Waveform SVG */}
             <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-white" stroke="currentColor" strokeWidth="1">
               <path d="M3 12h2M7 8v8M11 4v16M15 8v8M19 12h2" strokeLinecap="round" />
-              <motion.path 
-                d="M7 8v8M11 4v16M15 8v8" 
-                animate={{ 
-                  d: isHovered 
-                    ? ["M7 6v12M11 2v20M15 6v12", "M7 10v4M11 8v8M15 10v4", "M7 6v12M11 2v20M15 6v12"] 
-                    : ["M7 8v8M11 4v16M15 8v8"] 
+              <motion.path
+                d="M7 8v8M11 4v16M15 8v8"
+                animate={{
+                  d: isHovered
+                    ? ["M7 6v12M11 2v20M15 6v12", "M7 10v4M11 8v8M15 10v4", "M7 6v12M11 2v20M15 6v12"]
+                    : ["M7 8v8M11 4v16M15 8v8"]
                 }}
                 transition={{ duration: 0.5, repeat: Infinity }}
-                strokeLinecap="round" 
+                strokeLinecap="round"
               />
             </svg>
           </div>

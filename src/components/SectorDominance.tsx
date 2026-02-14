@@ -2,38 +2,38 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const sectors = [
-  { 
-    name: 'WELLNESS', 
+  {
+    name: 'WELLNESS',
     fullName: 'WELLNESS & LONGEVITY',
-    protocol: 'High-LTV Patient Systems', 
+    protocol: 'High-LTV Patient Systems',
     criteria: 'Minimum $50K/mo revenue. Professional clinical staff. Scalable patient database.',
     stat: '+42% Avg LTV Growth'
   },
-  { 
-    name: 'INDUSTRIAL', 
+  {
+    name: 'INDUSTRIAL',
     fullName: 'INDUSTRIAL & METALLURGY',
-    protocol: 'Complex B2B Sales Cycles', 
+    protocol: 'Complex B2B Sales Cycles',
     criteria: 'Direct CEO access. Minimum contract value $25K. No commodity-based models.',
     stat: '11-Month Pipeline Compression'
   },
-  { 
-    name: 'PREMIUM DTC', 
+  {
+    name: 'PREMIUM DTC',
     fullName: 'PREMIUM DTC',
-    protocol: 'Luxury Brand Scaling & Retention', 
+    protocol: 'Luxury Brand Scaling & Retention',
     criteria: '70%+ Gross margins. Established brand identity. $5K+ Monthly ad spend.',
     stat: '4.8x Return on Ad Spend'
   },
-  { 
-    name: 'REAL ESTATE', 
+  {
+    name: 'REAL ESTATE',
     fullName: 'LUXURY REAL ESTATE',
-    protocol: 'HNW Investor Acquisition', 
+    protocol: 'HNW Investor Acquisition',
     criteria: 'Listing average >$750K. Portfolio-based marketing. Global investor focus.',
     stat: '94% Lead Qualification Rate'
   },
-  { 
-    name: 'PROFESSIONAL', 
+  {
+    name: 'PROFESSIONAL',
     fullName: 'PROFESSIONAL SERVICES',
-    protocol: 'Advanced operational protocols for Clinical, Legal, and Strategic Consulting firms.', 
+    protocol: 'Advanced operational protocols for Clinical, Legal, and Strategic Consulting firms.',
     criteria: 'We engineer high-intent acquisition systems for high-value expertise.',
     stat: '3.5x Fee Authority Increase'
   }
@@ -44,7 +44,7 @@ const SectorDominance: React.FC = () => {
     <section className="py-20 md:py-32 border-b border-white/15 bg-void overflow-hidden">
       <div className="px-6 md:px-24 mb-16 md:mb-24">
         <div className="overflow-hidden mb-4">
-          <motion.h2 
+          <motion.h2
             initial={{ y: "100%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
@@ -53,7 +53,7 @@ const SectorDominance: React.FC = () => {
             SECTOR VALIDATION REQUIRED
           </motion.h2>
         </div>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -65,8 +65,8 @@ const SectorDominance: React.FC = () => {
 
       <div className="flex flex-col">
         {sectors.map((sector, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
             className="group relative border-b border-white/15 last:border-0 py-12 md:py-16 px-6 md:px-24 hover:bg-white/[0.03] transition-colors duration-700"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
@@ -76,9 +76,9 @@ const SectorDominance: React.FC = () => {
                   {sector.name}
                 </h3>
               </div>
-              
+
               {/* Sector Details */}
-              <div className="lg:col-span-5 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 space-y-6 md:space-y-8 lg:text-right">
+              <div className="lg:col-span-12 xl:col-span-5 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 space-y-6 md:space-y-8 lg:text-right">
                 <div>
                   <span className="font-mono text-noise text-xs md:text-sm uppercase tracking-widest block mb-2">Protocol_Core</span>
                   <p className="font-inter font-bold text-xl md:text-2xl uppercase text-white">{sector.protocol}</p>
@@ -95,7 +95,7 @@ const SectorDominance: React.FC = () => {
                   <div className="inline-block border border-white/30 px-6 py-2">
                     <span className="font-mono text-white text-lg md:text-xl">{sector.stat}</span>
                   </div>
-                  
+
                   <button className="bg-white text-black font-mono font-bold uppercase text-[10px] md:text-xs tracking-widest px-6 py-3 md:px-8 md:py-4 hover:bg-neutral-200 transition-all w-full md:w-auto">
                     INITIATE SECTOR PROTOCOL
                   </button>

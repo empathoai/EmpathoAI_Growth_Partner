@@ -12,7 +12,7 @@ const WhatsAppWidget: React.FC = () => {
       transition={{ delay: 1, duration: 1 }}
       className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end"
     >
-      <a 
+      <a
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -29,7 +29,7 @@ const WhatsAppWidget: React.FC = () => {
         <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-3 md:p-4 rounded-full hover:bg-white/10 transition-all duration-500 shadow-2xl">
           <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-white" strokeWidth={1} />
         </div>
-        
+
         {/* Subtle Outer Glow */}
         <div className="absolute inset-0 rounded-full border border-white/5 scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700" />
       </a>
