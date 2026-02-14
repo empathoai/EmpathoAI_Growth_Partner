@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         <div className="space-y-0 text-balance leading-tight">
           <div className="overflow-hidden">
             <motion.h1
-              className="font-inter font-extrabold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] tracking-tighter brutal-heading uppercase leading-[1.0] md:leading-[0.9]"
+              className="font-inter font-extrabold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] tracking-brutal brutal-heading uppercase leading-[1.0] md:leading-[0.9]"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.1 }}
@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </div>
           <div className="overflow-hidden">
             <motion.h1
-              className="font-inter font-extrabold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] tracking-tighter brutal-heading uppercase leading-[1.0] md:leading-[0.9]"
+              className="font-inter font-extrabold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] tracking-brutal brutal-heading uppercase leading-[1.0] md:leading-[0.9]"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.2 }}
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </div>
           <div className="overflow-hidden">
             <motion.h1
-              className="font-inter font-extrabold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] tracking-tighter brutal-heading uppercase leading-[1.0] md:leading-[0.9]"
+              className="font-inter font-extrabold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] tracking-brutal brutal-heading uppercase leading-[1.0] md:leading-[0.9]"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.3 }}
@@ -109,8 +109,8 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               onClick={() => callStatus === 'active' ? stopCall() : startCall()}
               disabled={callStatus === 'loading'}
               className={`institutional-btn group flex items-center justify-center gap-4 px-8 py-6 md:px-12 md:py-8 font-mono font-bold uppercase text-sm md:text-lg tracking-widest transition-all w-full md:w-auto ${callStatus === 'active'
-                  ? 'bg-white text-black animate-pulse'
-                  : 'bg-white/5 backdrop-blur-md text-white hover:bg-white/10'
+                ? 'bg-white text-black animate-pulse'
+                : 'bg-white/5 backdrop-blur-md text-white hover:bg-white/10'
                 }`}
             >
               {callStatus === 'loading' ? (

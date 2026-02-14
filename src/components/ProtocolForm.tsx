@@ -137,7 +137,7 @@ const ProtocolForm: React.FC<ProtocolFormProps> = ({ onClose }) => {
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white scale-x-0 group-focus-within:scale-x-100 transition-transform origin-left" />
               </div>
 
-              <p className="text-[10px] text-noise font-montserrat uppercase tracking-wider leading-relaxed opacity-60">
+              <p className="text-[10px] text-white/60 font-montserrat uppercase tracking-wider leading-relaxed">
                 By clicking Submit Application, you agree to our Privacy Policy and consent to receive communications via WhatsApp/SMS for strategic auditing purposes.
               </p>
 

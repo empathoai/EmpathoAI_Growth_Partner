@@ -10,7 +10,7 @@ const VoiceAgentWidget: React.FC = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1.2, duration: 1 }}
-      className="fixed bottom-6 left-6 z-50 hidden md:block"
+      className="fixed bottom-24 md:bottom-6 left-6 z-50"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

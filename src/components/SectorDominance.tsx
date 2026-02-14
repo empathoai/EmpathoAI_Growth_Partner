@@ -57,7 +57,7 @@ const SectorDominance: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-inter font-extrabold text-3xl sm:text-4xl md:text-5xl uppercase tracking-tighter max-w-4xl text-balance"
+          className="font-inter font-extrabold text-3xl sm:text-4xl md:text-5xl uppercase tracking-brutal leading-[1.1] max-w-4xl text-balance"
         >
           WE ONLY DEPLOY FOR <span className="text-noise font-mono">[</span>HIGH-MARGIN<span className="text-noise font-mono">]</span> ENTITIES.
         </motion.p>
@@ -67,12 +67,12 @@ const SectorDominance: React.FC = () => {
         {sectors.map((sector, idx) => (
           <div
             key={idx}
-            className="group relative border-b border-white/15 last:border-0 py-12 md:py-16 px-6 md:px-24 hover:bg-white/[0.03] transition-colors duration-700"
+            className="group relative border-b border-white/20 last:border-0 py-12 md:py-16 px-6 md:px-24 hover:bg-white/[0.03] backdrop-blur-sm transition-colors duration-700"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
               {/* Massive Name */}
               <div className="lg:col-span-7">
-                <h3 className="outline-text font-inter font-extrabold text-4xl sm:text-6xl md:text-[8rem] xl:text-[10rem] uppercase tracking-tighter leading-none select-none break-words">
+                <h3 className="outline-text font-inter font-extrabold text-4xl sm:text-6xl md:text-[8rem] xl:text-[10rem] uppercase tracking-brutal leading-none select-none break-words">
                   {sector.name}
                 </h3>
               </div>
@@ -86,14 +86,14 @@ const SectorDominance: React.FC = () => {
 
                 <div>
                   <span className="font-mono text-noise text-xs md:text-sm uppercase tracking-widest block mb-2">Selection_Criteria</span>
-                  <p className="font-montserrat text-base md:text-lg text-white/90 group-hover:text-[#C0C0C0] transition-colors duration-500 shadow-silver">
+                  <p className="font-montserrat text-base md:text-lg text-white group-hover:text-[#C0C0C0] transition-colors duration-500 shadow-silver">
                     {sector.criteria}
                   </p>
                 </div>
 
                 <div className="flex flex-col lg:items-end gap-4 md:gap-6 pt-4">
                   <div className="inline-block border border-white/30 px-6 py-2">
-                    <span className="font-mono text-white text-lg md:text-xl">{sector.stat}</span>
+                    <span className="font-mono text-white text-lg md:text-xl font-bold">{sector.stat}</span>
                   </div>
 
                   <button className="bg-white text-black font-mono font-bold uppercase text-[10px] md:text-xs tracking-widest px-6 py-3 md:px-8 md:py-4 hover:bg-neutral-200 transition-all w-full md:w-auto">
@@ -103,7 +103,7 @@ const SectorDominance: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute right-6 top-6 md:right-12 md:top-12 font-mono text-noise/5 text-6xl md:text-9xl pointer-events-none select-none">
+            <div className="absolute right-6 top-6 md:right-12 md:top-12 font-mono text-noise/[0.03] text-6xl md:text-9xl pointer-events-none select-none">
               0{idx + 1}
             </div>
           </div>

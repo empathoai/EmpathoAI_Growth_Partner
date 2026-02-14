@@ -30,7 +30,7 @@ const Deployment: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
             >
-              <div className="font-mono text-4xl md:text-5xl text-noise/15 group-hover:text-white/40 transition-colors duration-500 mb-6">
+              <div className="font-mono text-4xl md:text-5xl text-noise group-hover:text-white/40 transition-colors duration-500 mb-6">
                 {step.num}
               </div>
               <div className="space-y-3">

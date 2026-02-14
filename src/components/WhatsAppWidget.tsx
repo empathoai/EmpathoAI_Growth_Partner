@@ -10,7 +10,7 @@ const WhatsAppWidget: React.FC = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1, duration: 1 }}
-      className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end"
+      className="fixed bottom-32 md:bottom-6 right-6 z-50 flex flex-col gap-4 items-end"
     >
       <a
         href={waUrl}

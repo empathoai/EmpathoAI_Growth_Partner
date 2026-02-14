@@ -11,7 +11,7 @@ interface FAQItemProps {
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle }) => {
   return (
-    <div className="border-t border-white/10 last:border-b last:border-white/10">
+    <div className="border-t border-white/20 last:border-b last:border-white/20">
       <button
         onClick={onToggle}
         className="w-full flex justify-between items-center py-8 md:py-10 text-left focus:outline-none group"
@@ -71,7 +71,7 @@ const FAQ: React.FC = () => {
       <div className="max-w-[1600px] mx-auto">
         <div className="mb-20 md:mb-32">
           <h2 className="font-mono text-lg md:text-xl text-noise uppercase tracking-widest mb-4">Strategic Intelligence</h2>
-          <p className="font-inter font-extrabold text-4xl sm:text-6xl md:text-8xl tracking-brutal uppercase leading-none">
+          <p className="font-inter font-extrabold text-4xl sm:text-6xl md:text-[6.5rem] tracking-brutal uppercase leading-none">
             The Bridge to <span className="text-white">Authority</span>
           </p>
         </div>
