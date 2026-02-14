@@ -16,15 +16,11 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: 'dist',
       sourcemap: false,
-      chunkSizeWarningLimit: 1000,
+      assetsInlineLimit: 4096, // Inline small assets < 4kb
       rollupOptions: {
         output: {
-          manualChunks: {
-            'vendor-react': ['react', 'react-dom'],
-            'vendor-motion': ['framer-motion'],
-            'vendor-icons': ['lucide-react'],
-            'vendor-vapi': ['@vapi-ai/web'],
-          }
+          // Force single bundle by removing entryFileNames/chunkFileNames customization if any
+          // and ensured no manualChunks are defined.
         }
       }
     },
