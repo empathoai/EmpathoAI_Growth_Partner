@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# EMPATHOAI // Sovereign Revenue Infrastructure
 
-# Run and deploy your AI Studio app
+Proprietary acquisition systems for High-Margin businesses. Scaling performance through integrated human-machine protocol.
 
-This contains everything you need to run your app locally.
+## Technical Specifications (Hostinger Deployment)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1QyK8lKz543f2Jldq5hV2VpIG6_slqEBX
+This project is built on a **Pure Vite Architecture**, optimized for performance and automated deployment.
 
-## Run Locally
+- **Node.js Version**: 22.x
+- **Package Manager**: npm
+- **Framework**: Vite 6 (Pure React)
+- **Install Command**: `npm install`
+- **Build Command**: `npm run build`
+- **Output Folder**: `dist/`
 
-**Prerequisites:**  Node.js
+## Environment Variables
 
+The system requires the following variables for full functionality (Template provided in `template.env`):
+- `VITE_VAPI_PUBLIC_KEY`
+- `VITE_VAPI_ASSISTANT_ID`
+- `GEMINI_API_KEY`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Deployment Protocol
+
+1. Ensure Node.js 22 is selected in the Hostinger panel.
+2. The `dist/` folder contains the production-ready assets.
+3. For Single Page Application (SPA) functionality, the `.htaccess` file in the root handles routing.
+
+---
+**EMPATHOAI // SOVEREIGN_FRAMEWORK_V3**
