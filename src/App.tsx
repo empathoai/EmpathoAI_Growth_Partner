@@ -16,10 +16,10 @@ import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
 import CookieBanner from './components/CookieBanner';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import SEO from './components/SEO';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
-  const baseUrl = 'https://empathoai.com';
   const location = useLocation();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -28,6 +28,26 @@ const App: React.FC = () => {
   const isPolicyOpen = location.pathname === '/privacy-policy';
   const isTermsOpen = location.pathname === '/terms-of-service';
   const isCookieOpen = location.pathname === '/cookie-policy';
+
+  // Redirection Layer for Legacy GSC URLs
+  useEffect(() => {
+    const legacyPaths = [
+      '/contact',
+      '/services',
+      '/case-studies',
+      '/empowering-growth-through-intelligent-automation-and-neuromarketing-strategies',
+      '/empowering-growth-through-intelligent-automation-and-user-centric-design'
+    ];
+
+    if (legacyPaths.includes(location.pathname)) {
+      navigate('/', { replace: true });
+    }
+
+    // Also redirect any www to non-www if captured by SPA (though usually handled by DNS/Proxy)
+    if (window.location.hostname.startsWith('www.')) {
+      window.location.replace(`https://empathoai.com${location.pathname}${location.search}`);
+    }
+  }, [location, navigate]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,6 +72,7 @@ const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-void selection:bg-white selection:text-black overflow-x-hidden">
+      <SEO />
       {/* Sovereign Ghost Navigation */}
       <nav
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled
