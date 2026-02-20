@@ -19,12 +19,13 @@ import WhatsAppWidget from './components/WhatsAppWidget';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
+  const baseUrl = 'https://empathoai.com';
   const location = useLocation();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Derived states from routing
-  const isPolicyOpen = location.pathname === '/privacy-protocol';
+  const isPolicyOpen = location.pathname === '/privacy-policy';
   const isTermsOpen = location.pathname === '/terms-of-service';
   const isCookieOpen = location.pathname === '/cookie-policy';
 
@@ -108,7 +109,7 @@ const App: React.FC = () => {
           </div>
           <div className="flex gap-8 font-mono text-[10px] md:text-xs text-noise uppercase tracking-widest">
             <Link
-              to="/privacy-protocol"
+              to="/privacy-policy"
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
             >
               Privacy_Protocol

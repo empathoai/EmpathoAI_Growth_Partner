@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const baseUrl = 'https://www.empathoai.com';
+const baseUrl = 'https://empathoai.com';
 const distDir = path.resolve(process.cwd(), 'dist');
 
 // Ensure dist directory exists
@@ -19,7 +19,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>${baseUrl}/privacy-protocol</loc>
+    <loc>${baseUrl}/privacy-policy</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
