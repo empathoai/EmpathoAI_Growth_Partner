@@ -20,7 +20,7 @@ const sectors = [
     name: 'PREMIUM DTC',
     fullName: 'PREMIUM DTC',
     protocol: 'Luxury Brand Scaling & Retention',
-    criteria: '70%+ Gross margins. Established brand identity. $5K+ Monthly ad spend.',
+    criteria: '70%+ Gross margins. Established brand identity. $30K+ Monthly ad spend.',
     stat: '4.8x Return on Ad Spend'
   },
   {
@@ -59,7 +59,7 @@ const SectorDominance: React.FC = () => {
           viewport={{ once: true }}
           className="font-inter font-extrabold text-3xl sm:text-4xl md:text-5xl uppercase tracking-brutal leading-[1.1] max-w-4xl text-balance"
         >
-          WE ONLY DEPLOY FOR <span className="text-noise font-mono">[</span>HIGH-MARGIN<span className="text-noise font-mono">]</span> ENTITIES.
+          WE ONLY DEPLOY FOR <span className="text-noise font-mono">[</span>GALACTIC<span className="text-noise font-mono">]</span> ENTITIES.
         </motion.p>
       </div>
 

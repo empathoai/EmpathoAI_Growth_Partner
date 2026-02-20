@@ -104,19 +104,19 @@ const ComparisonGrid: React.FC = () => {
 };
 
 const noiseItems = [
-  "Generic outbound scripts optimized for volume over high-intent.",
-  "Junior management with excessive churn and protocol latency.",
-  "Focus on vanity metrics (Clicks/Leads) over institutional profit.",
-  "Disconnected tech stacks resulting in critical attribution leakage.",
-  "Retainer-based models prioritizing maintenance over growth."
+  "Vendor Mindset (Cost Center) - \"You pay us to do X\".",
+  "Fee for Service model enabling misaligned incentives.",
+  "Monthly Reporting cycles that hide inefficiency.",
+  "Junior Account Managers with zero skin in the game.",
+  "Focus on vanity metrics (Leads) vs Net Profit."
 ];
 
 const signalItems = [
-  "Integrated revenue infrastructure engineered for sovereign scale.",
-  "Agentic protocols precision-tuned to sector-specific intent.",
-  "Direct partner-level strategic execution and capital rigor.",
-  "100% Data feedback loops with absolute ROI transparency.",
-  "Mathematically tethered models (Skin in the Game participation)."
+  "Co-Founder Mindset (Profit Center) - \"We own the outcome\".",
+  "Skin in the Game participation (Shared Risk/Reward).",
+  "Real-Time OaaS Dashboard with total transparency.",
+  "Partner-Level Strategy tailored to your Bio-Operational capacity.",
+  "Focus on LTV:CAC and Net Profit Optimization."
 ];
 
 export default ComparisonGrid;

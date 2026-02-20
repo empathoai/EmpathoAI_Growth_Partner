@@ -4,21 +4,27 @@ import { motion } from 'framer-motion';
 const phases = [
   {
     num: '01',
-    label: '[PRE-SIGNAL]',
-    title: 'Baseline Audit',
-    desc: 'Deep-layer structural analysis of existing revenue leakage and market arbitrage opportunities.'
+    label: '[DIGITAL DISCOVERY]',
+    title: 'Synthetic Testing',
+    desc: 'We simulate your market before spending a dollar, identifying high-intent accounts via non-linear signals.'
   },
   {
     num: '02',
-    label: '[SIGNAL ACQUISITION]',
-    title: 'System Deployment',
-    desc: 'Integration of agentic acquisition modules and proprietary behavioral heuristics.'
+    label: '[ACTION FOUNDATION]',
+    title: 'Unified Data',
+    desc: 'We unify Marketing, Sales, and Product into a single \'System of Action\' that triggers autonomous workflows.'
   },
   {
     num: '03',
-    label: '[AUTONOMOUS ALPHA]',
-    title: 'Scaled Dominance',
-    desc: 'Transition to 24/7 autonomous revenue production with 100% data attribution.'
+    label: '[STRAT-AGENT]',
+    title: 'Agent Deployment',
+    desc: 'Agentic fleets handle 80% of execution. Humans focus purely on closing and relationship architecture.'
+  },
+  {
+    num: '04',
+    label: '[FLYWHEEL MOAT]',
+    title: 'Proprietary Intelligence',
+    desc: 'Your growth generates proprietary data benchmarks that competitors cannot copy, creating a defensive moat.'
   }
 ];
 

@@ -1,6 +1,7 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import Hero from './components/Hero';
 import Mechanism from './components/Mechanism';
 import Methodology from './components/Methodology';
@@ -17,31 +18,34 @@ import CookieBanner from './components/CookieBanner';
 import WhatsAppWidget from './components/WhatsAppWidget';
 
 const App: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
-  const [isTermsOpen, setIsTermsOpen] = useState(false);
-  const [isCookieOpen, setIsCookieOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Derived states from routing
+  const isPolicyOpen = location.pathname === '/privacy-protocol';
+  const isTermsOpen = location.pathname === '/terms-of-service';
+  const isCookieOpen = location.pathname === '/cookie-policy';
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
     };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const toggleForm = useCallback(() => {
     setIsFormOpen(prev => !prev);
   }, []);
 
-  const togglePolicy = useCallback(() => {
-    setIsPolicyOpen(prev => !prev);
-  }, []);
-
-  const toggleTerms = useCallback(() => {
-    setIsTermsOpen(prev => !prev);
-  }, []);
+  const handleCloseLegal = useCallback(() => {
+    navigate('/');
+  }, [navigate]);
 
   const isAnyOverlayOpen = isFormOpen || isPolicyOpen || isTermsOpen || isCookieOpen;
 
@@ -103,31 +107,30 @@ const App: React.FC = () => {
             © 2024 EmpathoAI Agency. All Rights Reserved.
           </div>
           <div className="flex gap-8 font-mono text-[10px] md:text-xs text-noise uppercase tracking-widest">
-            <button
-              onClick={togglePolicy}
+            <Link
+              to="/privacy-protocol"
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
             >
               Privacy_Protocol
-            </button>
-            <button
-              onClick={toggleTerms}
+            </Link>
+            <Link
+              to="/terms-of-service"
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
             >
               Terms_of_Service
-            </button>
+            </Link>
           </div>
         </footer>
       </motion.div>
 
       {/* Overlays */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isFormOpen && <ProtocolForm onClose={() => setIsFormOpen(false)} />}
       </AnimatePresence>
-      <AnimatePresence>
-        {isPolicyOpen && <PrivacyPolicy onClose={() => setIsPolicyOpen(false)} />}
-      </AnimatePresence>
-      <AnimatePresence>
-        {isTermsOpen && <TermsOfService onClose={() => setIsTermsOpen(false)} />}
+      <AnimatePresence mode="wait">
+        {isPolicyOpen && <PrivacyPolicy key="privacy" onClose={handleCloseLegal} />}
+        {isTermsOpen && <TermsOfService key="terms" onClose={handleCloseLegal} />}
+        {isCookieOpen && <CookiePolicy key="cookie" onClose={handleCloseLegal} />}
       </AnimatePresence>
       <CookieBanner />
       <WhatsAppWidget />

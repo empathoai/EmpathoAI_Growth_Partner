@@ -49,20 +49,20 @@ const FAQ: React.FC = () => {
 
   const faqData = [
     {
-      question: "Why isn't my current marketing agency scaling my revenue?",
-      answer: "Most agencies focus on vanity metrics like clicks or impressions. They provide 'services,' not systems. EmpathoAI replaces fragmented tactics with Revenue Infrastructure, ensuring that every dollar spent on Meta Ads is an investment in a predictable, high-fidelity acquisition engine."
+      question: "Why do you cap your client roster at 11 partners?",
+      answer: "To maintain Bio-Operational Clarity. We cannot think at a Co-Founder level if we are drowning in client volume. We trade mass-market scale for singular focus on your net profit."
     },
     {
-      question: "How can I reduce my Customer Acquisition Cost (CAC) on Meta Ads?",
-      answer: "High CAC is usually a symptom of a weak 'Conversion Bridge.' Our Sovereign Framework V3 uses AI-driven empathy to capture human intent and machine precision to optimize the unit economics of your sales funnel, driving down costs by increasing resonance and friction-less conversion."
+      question: "What is a \"Galactic\" business?",
+      answer: "A business with momentum (>$50k/mo) that needs a lever, not a crutch. If you are looking for a \"service provider\" to fix your ads, we are not a fit. If you want a Partner to engineer a data moat, we are."
     },
     {
-      question: "What is the difference between a lead generator and a Growth Partner?",
-      answer: "A lead generator sells you names; a Growth Partner builds the infrastructure to own the market. We operate under a 'Skin in the Game' model, where our success is mathematically tethered to your profit margins, providing the institutional rigor that traditional agencies lack."
+      question: "How does the \"Skin in the Game\" model work?",
+      answer: "We define the LTV:CAC benchmark together. If we don't hit it, we don't get paid our full retainer. We are incentivized to optimize your profit, not just your ad spend."
     },
     {
-      question: "Is EmpathoAI suitable for niche industries like Industrial Manufacturing or Medical Aesthetics?",
-      answer: "Yes. Our methodology is vertical-agnostic because the mathematics of growth are universal. Whether it is Industrial B2B or High-Value Clinical Services, we engineer the specific 'Ecosystem of Influence' required to dominate your particular niche."
+      question: "Do you work with startups?",
+      answer: "Only if they are well-funded and have \"Galactic\" potential (Proof of Concept established). We do not build from zero; we amplify momentum."
     }
   ];
 

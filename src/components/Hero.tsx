@@ -60,7 +60,8 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.1 }}
             >
-              Scaling <span className="text-noise font-mono">[</span>Revenue<span className="text-noise font-mono">]</span>
+              Your <span className="text-noise font-mono">[</span>Co-Founder<span className="text-noise font-mono">]</span> <br className="hidden md:block" />
+              Without The Equity
             </motion.h1>
           </div>
           <div className="overflow-hidden">
@@ -92,8 +93,8 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           transition={{ duration: 1.5, delay: 0.8 }}
         >
           <p className="font-montserrat text-lg md:text-body-lg max-w-2xl opacity-80 text-balance leading-relaxed">
-            We build proprietary acquisition systems for High-Margin businesses.
-            Scaling performance through integrated human-machine protocol.
+            We archive the 'Agency' model to install Intelligent GTM Infrastructure.
+            Shared risk, total visibility, and outcome-based economics.
           </p>
 
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 w-full md:w-auto">

@@ -6,7 +6,7 @@ const distDir = path.resolve(process.cwd(), 'dist');
 
 // Ensure dist directory exists
 if (!fs.existsSync(distDir)) {
-    fs.mkdirSync(distDir, { recursive: true });
+  fs.mkdirSync(distDir, { recursive: true });
 }
 
 // 1. Generate sitemap.xml
@@ -17,6 +17,24 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/privacy-protocol</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/terms-of-service</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/cookie-policy</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>${baseUrl}/#audit</loc>

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const Mechanism: React.FC = () => {
   const cards = [
-    { title: 'CAPTURE', sub: 'Mapping high-intent behavioral patterns across desiloed data lakes.' },
-    { title: 'CONVERT', sub: 'Agentic sales protocols that qualify and close at institutional scale.' },
-    { title: 'COMPOUND', sub: 'Automated retention architecture that extracts maximum lifetime value.' }
+    { title: 'CAPTURE', sub: 'Your top 20% of prospects identified before they ever fill out a form.' },
+    { title: 'CONVERT', sub: 'Qualified deals closed without manual follow-up overhead.' },
+    { title: 'COMPOUND', sub: 'Revenue from existing clients exceeds new acquisition cost within 90 days.' }
   ];
 
   return (
