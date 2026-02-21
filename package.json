@@ -6,15 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/generate-seo.js",
-    "start": "vite preview --host 0.0.0.0 --port $PORT",
+    "start": "node server.js",
     "preview": "vite preview --host 0.0.0.0 --port $PORT",
-    "lint": "tsc && vite build"
+    "lint": "tsc --noEmit"
   },
   "engines": {
     "node": ">=20.0.0"
   },
   "dependencies": {
     "@vapi-ai/web": "^2.2.0",
+    "express": "^5.2.1",
     "framer-motion": "11.11.17",
     "lucide-react": "^0.468.0",
     "react": "19.0.0",
