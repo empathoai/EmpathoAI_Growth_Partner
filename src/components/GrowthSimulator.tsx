@@ -28,10 +28,10 @@ const INDUSTRY_OPTIONS = [
   'Real Estate',
   'B2B Services',
   'Local Business',
-  'Other'
+  'Other (specify in description)'
 ];
 
-const COUNTRY_CODES = ['+1', '+44', '+34', '+52', '+57', '+58', '+54', '+56', '+51', '+593'];
+const COUNTRY_CODES = ['+1 (US)', '+44 (UK)', '+34 (ES)', '+52 (MX)', '+57 (CO)', '+58 (VE)', '+54 (AR)', '+56 (CL)', '+51 (PE)', '+593 (EC)'];
 
 const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/BecP4OzzrESHzfqhFUEz/webhook-trigger/3d759b69-1297-456f-be66-3dd506225915';
 
@@ -56,6 +56,7 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const [focusedField, setFocusedField] = useState<keyof FormState | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const fields = useMemo(
@@ -84,11 +85,11 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
 
     if (!fields.fullName) nextErrors.fullName = 'This field is required.';
     if (!fields.email) nextErrors.email = 'This field is required.';
-    else if (!isValidEmail(fields.email)) nextErrors.email = 'This field is required.';
+    else if (!isValidEmail(fields.email)) nextErrors.email = 'Enter a valid email.';
     if (!fields.phone) nextErrors.phone = 'This field is required.';
     if (!fields.industry) nextErrors.industry = 'This field is required.';
     if (!fields.businessSituation) nextErrors.businessSituation = 'This field is required.';
-    else if (fields.businessSituation.length < 40) nextErrors.businessSituation = 'This field is required.';
+    else if (fields.businessSituation.length < 40) nextErrors.businessSituation = 'Please provide more detail (minimum 40 characters)';
 
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
@@ -120,6 +121,7 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
           website: fields.website,
           industry: fields.industry,
           businessSituation: fields.businessSituation,
+          messageLength: fields.businessSituation.length,
           source: 'EmpathoAI Diagnosis Form'
         })
       });
@@ -132,6 +134,10 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
       setIsSubmitting(false);
     }
   };
+
+
+  const getLabelClassName = (field: keyof FormState, alwaysOrange = false) =>
+    `font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] ${alwaysOrange || focusedField === field ? 'text-[#C56A1A]' : 'text-[#8A8F98]'} transition-colors`;
 
   const handleTextareaFocus = () => {
     window.setTimeout(() => {
@@ -186,14 +192,14 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                     REQUEST RECEIVED
                   </h2>
                   <p className="font-helvetica font-regular text-base md:text-lg leading-relaxed text-[#8A8F98] max-w-lg">
-                    We will review your information and contact you if there is a fit.
+                    If there is a fit, we will contact you.
                   </p>
                 </div>
 
                 <button
                   type="button"
                   onClick={onClose}
-                  className="institutional-btn shimmer-active w-full md:w-auto min-w-[220px] inline-flex items-center justify-center bg-[#C56A1A] text-[#F5F5F5] font-helvetica font-bold uppercase text-sm tracking-label px-8 py-6 md:px-12 md:py-8 transition-all duration-500"
+                  className="institutional-btn shimmer-active w-full md:w-auto min-w-[220px] inline-flex items-center justify-center bg-[#C56A1A] text-[#F5F5F5] font-helvetica font-bold uppercase text-sm tracking-label px-8 py-6 md:px-12 md:py-8 transition-all duration-500 hover:brightness-110 hover:shadow-[0_0_24px_rgba(197,106,26,0.22)]"
                 >
                   CLOSE
                 </button>
@@ -221,13 +227,15 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
 
                 <div className="grid grid-cols-1 gap-7 md:gap-6">
                   <div className="space-y-3">
-                    <label className="font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] text-[#F5F5F5]">
+                    <label className={getLabelClassName('fullName')}>
                       FULL NAME
                     </label>
                     <input
                       type="text"
                       value={form.fullName}
                       onChange={(e) => handleChange('fullName', e.target.value)}
+                      onFocus={() => setFocusedField('fullName')}
+                      onBlur={() => setFocusedField(null)}
                       placeholder="Your name"
                       className={fieldBaseClass}
                     />
@@ -235,13 +243,15 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] text-[#F5F5F5]">
+                    <label className={getLabelClassName('email')}>
                       EMAIL
                     </label>
                     <input
                       type="email"
                       value={form.email}
                       onChange={(e) => handleChange('email', e.target.value)}
+                      onFocus={() => setFocusedField('email')}
+                      onBlur={() => setFocusedField(null)}
                       placeholder="founder@company.com"
                       className={fieldBaseClass}
                     />
@@ -249,13 +259,15 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] text-[#F5F5F5]">
+                    <label className={getLabelClassName('phone')}>
                       PHONE
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-[120px_minmax(0,1fr)] gap-4 sm:gap-5">
                       <select
                         value={form.countryCode}
                         onChange={(e) => handleChange('countryCode', e.target.value)}
+                        onFocus={() => setFocusedField('phone')}
+                        onBlur={() => setFocusedField(null)}
                         className="w-full min-w-0 bg-[#1A1A1D] border border-[#2A2F36] px-4 py-4 text-[#F5F5F5] font-helvetica font-regular focus:outline-none focus:border-[#C56A1A] transition-colors appearance-none"
                       >
                         {COUNTRY_CODES.map(code => (
@@ -266,6 +278,8 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                         type="tel"
                         value={form.phone}
                         onChange={(e) => handleChange('phone', e.target.value)}
+                        onFocus={() => setFocusedField('phone')}
+                        onBlur={() => setFocusedField(null)}
                         placeholder="Phone number"
                         className={fieldBaseClass}
                       />
@@ -274,25 +288,29 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] text-[#F5F5F5]">
+                    <label className={getLabelClassName('website')}>
                       WEBSITE
                     </label>
                     <input
                       type="url"
                       value={form.website}
                       onChange={(e) => handleChange('website', e.target.value)}
+                      onFocus={() => setFocusedField('website')}
+                      onBlur={() => setFocusedField(null)}
                       placeholder="https://yourcompany.com"
                       className={fieldBaseClass}
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] text-[#F5F5F5]">
+                    <label className={getLabelClassName('industry')}>
                       INDUSTRY
                     </label>
                     <select
                       value={form.industry}
                       onChange={(e) => handleChange('industry', e.target.value)}
+                      onFocus={() => setFocusedField('industry')}
+                      onBlur={() => setFocusedField(null)}
                       className={fieldBaseClass + ' appearance-none'}
                     >
                       <option value="">Select industry</option>
@@ -304,18 +322,21 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="font-helvetica font-light text-[10px] md:text-xs uppercase tracking-[0.28em] text-[#F5F5F5]">
+                    <label className={getLabelClassName('businessSituation', true)}>
                       WHAT IS HAPPENING IN YOUR BUSINESS?
                     </label>
                     <textarea
                       ref={textareaRef}
                       value={form.businessSituation}
                       onChange={(e) => handleChange('businessSituation', e.target.value)}
-                      onFocus={handleTextareaFocus}
+                      onFocus={() => { setFocusedField('businessSituation'); handleTextareaFocus(); }}
+                      onBlur={() => setFocusedField(null)}
                       placeholder="What is breaking in your business right now? Be specific."
                       rows={8}
                       className="w-full min-h-[200px] bg-[#1A1A1D] border border-[#2A2F36] px-5 py-4 text-[#F5F5F5] placeholder:text-[#7A8087] font-helvetica font-regular text-base focus:outline-none focus:border-[#C56A1A] transition-colors resize-none"
                     />
+                    <p className="text-[#8A8F98] text-xs font-helvetica">Low-effort requests are ignored.</p>
+                    <p className="text-[#8A8F98] text-xs font-helvetica">{fields.businessSituation.length} / 40 characters</p>
                     {errors.businessSituation && <p className="text-[#C56A1A] text-xs font-helvetica">{errors.businessSituation}</p>}
                   </div>
                 </div>
@@ -326,10 +347,10 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="institutional-btn shimmer-active w-full md:w-auto min-w-[260px] inline-flex items-center justify-center bg-[#C56A1A] text-[#F5F5F5] font-helvetica font-bold uppercase text-sm tracking-label px-8 py-6 md:px-12 md:py-8 transition-all duration-500 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="institutional-btn shimmer-active w-full md:w-auto min-w-[260px] inline-flex items-center justify-center bg-[#C56A1A] text-[#F5F5F5] font-helvetica font-bold uppercase text-sm tracking-label px-8 py-6 md:px-12 md:py-8 transition-all duration-500 hover:brightness-110 hover:shadow-[0_0_24px_rgba(197,106,26,0.22)] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" strokeWidth={1.5} /> : null}
-                    REQUEST DIAGNOSIS
+                    REQUEST STRUCTURAL DIAGNOSIS
                   </button>
                   <p className="font-helvetica font-light text-[11px] uppercase tracking-[0.22em] text-[#7A8087]">
                     We only respond if there is a clear fit.

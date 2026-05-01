@@ -67,6 +67,18 @@ const App: React.FC = () => {
         <Hero onCtaClick={toggleForm} />
         <SectorDominance />
         <Methodology />
+        <section className="px-6 py-20 md:px-24 md:py-24 border-b border-white/15 bg-[#0B0B0C]">
+          <div className="max-w-[1600px] mx-auto text-center">
+            <p className="font-helvetica font-bold text-4xl sm:text-6xl md:text-[6.5rem] uppercase leading-[0.9] text-[#F5F5F5]">
+              IF YOU RECOGNIZE YOUR <span className="text-[#C56A1A]">BUSINESS</span> IN THIS,
+              <br />
+              THE PROBLEM IS NOT <span className="text-[#C56A1A]">EFFORT</span>.
+              <br />
+              <br />
+              IT IS <span className="text-[#C56A1A]">STRUCTURE</span>.
+            </p>
+          </div>
+        </section>
         <Guarantee onCtaClick={toggleForm} />
         <FAQ />
 

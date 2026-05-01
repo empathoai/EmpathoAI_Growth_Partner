@@ -38,7 +38,7 @@ const CookieBanner: React.FC = () => {
               <div className="flex justify-start">
                 <button
                   onClick={handleAccept}
-                  className="bg-white text-black text-[10px] font-mono font-bold uppercase px-4 py-2 hover:bg-zinc-200 transition-colors tracking-widest"
+                  className="bg-white text-black text-[10px] font-mono font-bold uppercase px-4 py-2 hover:bg-zinc-200 transition-colors tracking-widest rounded-md"
                 >
                   Accept
                 </button>

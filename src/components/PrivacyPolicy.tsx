@@ -14,6 +14,14 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[110] bg-black flex flex-col items-center justify-start overflow-y-auto pt-24 pb-32 px-6"
     >
+      <div className="absolute top-24 left-6 md:top-28 md:left-24 z-20">
+        <img
+          src="/logo_empathoai.svg"
+          alt="EmpathoAI"
+          className="h-20 md:h-[5.5rem] w-auto"
+        />
+      </div>
+
       <div className="absolute top-12 right-12">
         <button
           onClick={onClose}
@@ -23,7 +31,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
         </button>
       </div>
 
-      <div className="w-full max-w-5xl mx-auto space-y-16">
+      <div className="w-full max-w-5xl mx-auto space-y-16 pt-36 md:pt-40">
         <header className="space-y-6 pb-8 border-b border-divider">          <h1 className="font-helvetica font-bold text-4xl md:text-6xl uppercase leading-[0.95] text-[#F5F5F5] max-w-4xl">
             PRIVACY PROTOCOL & DATA GOVERNANCE
           </h1>

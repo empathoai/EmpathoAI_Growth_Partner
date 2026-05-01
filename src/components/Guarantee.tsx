@@ -21,7 +21,9 @@ const Guarantee: React.FC<GuaranteeProps> = ({ onCtaClick }) => {
           </h2>
 
           <p className="font-helvetica font-regular text-lg md:text-2xl text-gray-mid mb-12 md:mb-16 leading-relaxed max-w-2xl mx-auto">
-            If your system doesn't improve, you don't pay.
+            If your system does not <span className="text-[#C56A1A]">improve</span>, you do not pay.
+            <br />
+            We keep working until it <span className="text-[#C56A1A]">does</span>.
           </p>
 
           <button

@@ -74,6 +74,8 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           <p className="font-helvetica font-medium text-2xl max-w-[720px] text-[#8A8F98] text-balance leading-relaxed">
             We identify what is slowing your growth<br className="hidden md:block" />
             before you invest more time or money.
+            <br className="hidden md:block" />
+            For companies already generating revenue that need to fix how they grow.
           </p>
 
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 w-full md:w-auto">

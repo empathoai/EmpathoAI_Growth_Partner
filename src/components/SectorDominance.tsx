@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 const sectors = [
   {
     title: 'INCONSISTENT GROWTH',
-    copy: <>You generate <span className="text-[#C56A1A]">revenue</span>, but it's not predictable.</>,
+    copy: <>You cannot predict <span className="text-[#C56A1A]">revenue</span> month to month.</>,
   },
   {
     title: 'LOW CONVERSION',
-    copy: <>You get attention, but it doesn't turn into <span className="text-[#C56A1A]">clients</span>.</>,
+    copy: <>You generate <span className="text-[#C56A1A]">attention</span>, but it does not turn into <span className="text-[#C56A1A]">clients</span>.</>,
   },
   {
     title: 'MESSAGING MISALIGNMENT',
-    copy: <><span className="text-[#C56A1A]">You</span> have expertise, but the market doesn't feel it fast enough.</>,
+    copy: <>You have a strong <span className="text-[#C56A1A]">offer</span>, but the market does not <span className="text-[#C56A1A]">respond</span>.</>,
   },
   {
     title: 'ERODING PROFITABILITY',
-    copy: <>Growth is happening, but it keeps compressing <span className="text-[#C56A1A]">margins</span>.</>,
+    copy: <>Revenue grows, but <span className="text-[#C56A1A]">margins</span> keep shrinking.</>,
   },
   {
     title: 'DISCONNECTED FUNNEL',
-    copy: <>Your acquisition engine attracts interest, but nothing <span className="text-[#C56A1A]">connects</span> cleanly.</>,
+    copy: <>Your <span className="text-[#C56A1A]">acquisition</span> and <span className="text-[#C56A1A]">conversion</span> do not work together.</>,
   }
 ];
 
@@ -46,6 +46,16 @@ const SectorDominance: React.FC = () => {
         >
           WE DO NOT WORK <br className="hidden md:block" />
           WITH <span className="text-[#C56A1A]">MOST</span> COMPANIES.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-6 font-helvetica font-light text-base md:text-lg leading-relaxed text-gray-high max-w-2xl"
+        >
+          Most companies try to fix this with more <span className="text-[#C56A1A]">marketing</span>.
+          <br />
+          That is why it keeps getting <span className="text-[#C56A1A]">worse</span>.
         </motion.p>
       </div>
 

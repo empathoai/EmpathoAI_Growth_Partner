@@ -64,19 +64,19 @@ const FAQ: React.FC = () => {
   const faqData = [
     {
       question: 'Who is this for?',
-      answer: <>Businesses already generating <span className="text-[#C56A1A]">revenue</span> that need to fix how they grow.</>
+      answer: <>Businesses already generating <span className="text-[#C56A1A]">revenue</span> that need to fix how they <span className="text-[#C56A1A]">grow</span>.</>
     },
     {
       question: 'Who is this NOT for?',
-      answer: 'Companies looking for quick fixes, cheap services, or short-term tactics.'
+      answer: <>Businesses looking for <span className="text-[#C56A1A]">quick wins</span> or avoiding structural <span className="text-[#C56A1A]">changes</span>.</>
     },
     {
       question: 'How long does this take?',
-      answer: <>Initial diagnosis takes 15 minutes. Implementation depends on the <span className="text-[#C56A1A]">system</span>.</>
+      answer: <>Most systems improve within <span className="text-[#C56A1A]">90 days</span>.</>
     },
     {
       question: 'Do you work with startups?',
-      answer: 'No. Only businesses that already have traction.'
+      answer: <>Only if there is <span className="text-[#C56A1A]">traction</span> and clear <span className="text-[#C56A1A]">demand</span>.</>
     }
   ];
 

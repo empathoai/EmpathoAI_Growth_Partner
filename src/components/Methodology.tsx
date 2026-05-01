@@ -6,25 +6,25 @@ const phases = [
     num: '01',
     label: '[SYSTEM DIAGNOSIS]',
     title: <>FIND THE <span className="text-[#C56A1A]">PROBLEM</span></>,
-    desc: <>We find what is slowing your growth.</>
+    desc: <>We find what is slowing your <span className="text-[#C56A1A]">growth</span>.</>
   },
   {
     num: '02',
     label: '[ARCHITECTURE]',
     title: <>FIX THE <span className="text-[#C56A1A]">STRUCTURE</span></>,
-    desc: <>We fix how your business is structured.</>
+    desc: <>We fix how your business is <span className="text-[#C56A1A]">structured</span>.</>
   },
   {
     num: '03',
     label: '[EXECUTION]',
     title: <>IMPLEMENT THE <span className="text-[#C56A1A]">SYSTEM</span></>,
-    desc: <>We implement systems that run without you.</>
+    desc: <>We implement systems that run <span className="text-[#C56A1A]">without you</span>.</>
   },
   {
     num: '04',
     label: '[SCALE]',
     title: <>SCALE <span className="text-[#C56A1A]">RESULTS</span></>,
-    desc: <>We scale what is already working.</>
+    desc: <>We scale what is already <span className="text-[#C56A1A]">working</span>.</>
   }
 ];
 
@@ -34,6 +34,11 @@ const Methodology: React.FC = () => {
       <div className="max-w-[1600px] mx-auto">
         <div className="mb-24 md:mb-36">
           <p className="font-helvetica font-bold text-4xl sm:text-6xl md:text-[6.5rem] uppercase leading-[0.9] text-[#F5F5F5]">HOW WE WORK</p>
+          <p className="mt-6 font-helvetica font-light text-base md:text-lg leading-relaxed text-gray-high max-w-2xl">
+            Most companies stop after finding the <span className="text-[#C56A1A]">problem</span>.
+            <br />
+            We fix the entire <span className="text-[#C56A1A]">system</span>.
+          </p>
         </div>
 
         <div className="grid grid grid-cols-1 md:grid-cols-4 gap-[1px] bg-[#2A2F36] border border-divider">
