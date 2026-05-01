@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 
 interface GuaranteeProps {
@@ -7,7 +7,7 @@ interface GuaranteeProps {
 
 const Guarantee: React.FC<GuaranteeProps> = ({ onCtaClick }) => {
   return (
-    <section className="py-32 md:py-48 px-6 md:px-24 bg-void border-b border-white/15 text-center relative overflow-hidden">
+    <section className="py-32 md:py-48 px-6 md:px-24 bg-black border-b border-white/15 text-center relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,32 +15,30 @@ const Guarantee: React.FC<GuaranteeProps> = ({ onCtaClick }) => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 max-w-5xl mx-auto"
       >
-        <span className="font-mono text-sm md:text-base text-noise uppercase tracking-[0.4em] block mb-8">Performance Commitment</span>
-
-        <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 p-12 md:p-24 shadow-2xl">
-          <h2 className="font-inter font-extrabold text-4xl sm:text-6xl md:text-8xl tracking-tighter uppercase mb-8 leading-none text-white">
-            <span className="text-noise font-mono">[</span>90 Days<span className="text-noise font-mono">]</span> <br className="md:hidden" />
-            or <span className="text-white/40">Zero</span> Fee.
+        <div className="bg-white/[0.02] backdrop-blur-3xl border border-divider p-12 md:p-24 shadow-2xl">
+          <h2 className="font-helvetica font-bold text-4xl sm:text-6xl md:text-8xl uppercase mb-8 leading-none text-[#F5F5F5] max-w-4xl mx-auto">
+            FIX THE SYSTEM OR DON'T PAY
           </h2>
 
-          <p className="font-montserrat text-lg md:text-2xl text-noise mb-12 md:mb-16 leading-relaxed max-w-3xl mx-auto">
-            "We define the [LTV:CAC] benchmark together. If it is not hit in 90 Days, we work for free. That is Skin in the Game."
+          <p className="font-helvetica font-regular text-lg md:text-2xl text-gray-mid mb-12 md:mb-16 leading-relaxed max-w-2xl mx-auto">
+            If your system doesn’t improve, you don’t pay.
           </p>
 
           <button
             onClick={onCtaClick}
-            className="institutional-btn shimmer-active w-full md:w-auto bg-white text-black px-12 py-6 md:px-24 md:py-10 font-mono font-bold uppercase text-lg md:text-xl tracking-[0.2em] hover:bg-zinc-200 transition-all duration-700"
+            className="institutional-btn shimmer-active w-full md:w-auto bg-[#C56A1A] text-[#F5F5F5] px-12 py-6 md:px-24 md:py-10 font-helvetica font-bold uppercase text-lg md:text-xl tracking-label hover:bg-zinc-200 transition-all duration-700"
           >
-            Request Institutional Access
+            START DIAGNOSIS
           </button>
         </div>
       </motion.div>
 
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none">
-        <span className="font-inter font-extrabold text-[50vw] leading-none uppercase tracking-tighter">RISK</span>
+        <span className="font-helvetica font-bold text-[50vw] leading-none uppercase">RISK</span>
       </div>
     </section>
   );
 };
 
 export default Guarantee;
+

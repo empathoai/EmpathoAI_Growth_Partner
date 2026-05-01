@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "brand_name": "EmpathoAI",
+    "description": "Production design tokens for EmpathoAI ecosystem (Growth Partner, Offers)."
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#030303",
+      "hover": "#1a1a1a",
+      "foreground": "#FFFFFF",
+      "name": "void"
+    },
+    "secondary": {
+      "DEFAULT": "#666666",
+      "foreground": "#FFFFFF",
+      "name": "noise"
+    },
+    "background": "#030303",
+    "foreground": "#FFFFFF",
+    "muted": "#121212",
+    "accent": {
+      "DEFAULT": "#FFFFFF",
+      "foreground": "#030303",
+      "name": "institutional"
+    },
+    "destructive": "#EF4444",
+    "success": "#10B981"
+  },
+  "typography": {
+    "font_family_headings": ["Montserrat", "sans-serif"],
+    "font_family_body": ["Inter", "sans-serif"],
+    "font_family_mono": ["Roboto Mono", "monospace"],
+    "font_weight_bold": "700",
+    "font_weight_normal": "400"
+  },
+  "ui": {
+    "border_radius_default": "0px",
+    "border_radius_small": "0px",
+    "spacing_base_unit": "4px",
+    "letter_spacing_brutal": "-0.06em"
+  }
+}

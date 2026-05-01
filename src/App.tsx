@@ -3,20 +3,18 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import Hero from './components/Hero';
-import Mechanism from './components/Mechanism';
 import Methodology from './components/Methodology';
 import SectorDominance from './components/SectorDominance';
-import ComparisonGrid from './components/ComparisonGrid';
 import FAQ from './components/FAQ';
-import Deployment from './components/Deployment';
 import Guarantee from './components/Guarantee';
-import ProtocolForm from './components/ProtocolForm';
+import GrowthSimulator from './components/GrowthSimulator';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
 import CookieBanner from './components/CookieBanner';
-import WhatsAppWidget from './components/WhatsAppWidget';
 import SEO from './components/SEO';
+
+const MotionDiv = motion.div as any;
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -71,7 +69,7 @@ const App: React.FC = () => {
   const isAnyOverlayOpen = isFormOpen || isPolicyOpen || isTermsOpen || isCookieOpen;
 
   return (
-    <div className="relative min-h-screen bg-void selection:bg-white selection:text-black overflow-x-hidden">
+    <div className="relative min-h-screen bg-black selection:bg-white selection:text-black overflow-x-hidden">
       <SEO />
       {/* Sovereign Ghost Navigation */}
       <nav
@@ -81,18 +79,18 @@ const App: React.FC = () => {
           }`}
       >
         <div className="flex flex-col md:flex-row md:items-center gap-0 md:gap-4">
-          <div className="font-mono text-[10px] text-noise uppercase tracking-[0.2em] leading-none">
+          <div className="font-helvetica font-light text-[10px] text-gray-mid uppercase tracking-label leading-none">
             EMPATHO_FRAMEWORK_v2.0
           </div>
           {/* Extended Navigation */}
           <div className="hidden lg:flex items-center gap-8 ml-8">
-            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors cursor-pointer">
+            <span className="font-helvetica font-light text-[10px] text-white/40 uppercase tracking-label hover:text-white transition-colors cursor-pointer">
               Partner_Audit
             </span>
-            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors cursor-pointer">
+            <span className="font-helvetica font-light text-[10px] text-white/40 uppercase tracking-label hover:text-white transition-colors cursor-pointer">
               Methodology
             </span>
-            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors cursor-pointer">
+            <span className="font-helvetica font-light text-[10px] text-white/40 uppercase tracking-label hover:text-white transition-colors cursor-pointer">
               Success_Criteria
             </span>
           </div>
@@ -100,14 +98,14 @@ const App: React.FC = () => {
 
         <button
           onClick={toggleForm}
-          className="institutional-btn font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] px-4 py-2 hover:bg-white hover:text-black transition-all duration-500 whitespace-nowrap"
+          className="institutional-btn font-helvetica font-light text-[10px] md:text-xs uppercase tracking-label px-4 py-2 hover:bg-white hover:text-black transition-all duration-500 whitespace-nowrap"
         >
-          Request Access
+          REQUEST DIAGNOSIS
         </button>
       </nav>
 
       {/* Main Content */}
-      <motion.div
+      <MotionDiv
         animate={{
           opacity: isAnyOverlayOpen ? 0 : 1,
           scale: isAnyOverlayOpen ? 0.98 : 1
@@ -117,18 +115,15 @@ const App: React.FC = () => {
       >
         <Hero onCtaClick={toggleForm} />
         <SectorDominance />
-        <Mechanism />
         <Methodology />
-        <ComparisonGrid />
-        <Deployment />
         <Guarantee onCtaClick={toggleForm} />
         <FAQ />
 
         <footer className="px-6 py-12 md:px-24 md:py-16 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="font-mono text-[10px] md:text-xs text-noise uppercase tracking-widest">
-            © 2024 EmpathoAI Agency. All Rights Reserved.
+          <div className="font-helvetica font-light text-[10px] md:text-xs text-gray-mid uppercase tracking-label">
+            © 2024 EmpathoAI Growth Partner. All Rights Reserved.
           </div>
-          <div className="flex gap-8 font-mono text-[10px] md:text-xs text-noise uppercase tracking-widest">
+          <div className="flex gap-8 font-helvetica font-light text-[10px] md:text-xs text-gray-mid uppercase tracking-label">
             <Link
               to="/privacy-policy"
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
@@ -143,11 +138,11 @@ const App: React.FC = () => {
             </Link>
           </div>
         </footer>
-      </motion.div>
+      </MotionDiv>
 
       {/* Overlays */}
       <AnimatePresence mode="wait">
-        {isFormOpen && <ProtocolForm onClose={() => setIsFormOpen(false)} />}
+        {isFormOpen && <GrowthSimulator onClose={() => setIsFormOpen(false)} />}
       </AnimatePresence>
       <AnimatePresence mode="wait">
         {isPolicyOpen && <PrivacyPolicy key="privacy" onClose={handleCloseLegal} />}
@@ -155,9 +150,14 @@ const App: React.FC = () => {
         {isCookieOpen && <CookiePolicy key="cookie" onClose={handleCloseLegal} />}
       </AnimatePresence>
       <CookieBanner />
-      <WhatsAppWidget />
     </div>
   );
 };
 
 export default App;
+
+
+
+
+
+

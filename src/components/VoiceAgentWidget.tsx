@@ -24,7 +24,7 @@ const VoiceAgentWidget: React.FC = () => {
               exit={{ opacity: 0, x: -10 }}
               className="absolute left-full ml-4 top-1/2 -translate-y-1/2 pointer-events-none"
             >
-              <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 px-4 py-2 rounded-sm whitespace-nowrap">
+              <div className="bg-white/[0.03] backdrop-blur-xl border border-divider px-4 py-2 rounded-sm whitespace-nowrap">
                 <span className="font-mono text-[10px] text-white uppercase tracking-widest">Initialize Voice Synthesis Audit</span>
               </div>
             </motion.div>
@@ -35,18 +35,18 @@ const VoiceAgentWidget: React.FC = () => {
         <div className="relative flex items-center justify-center w-14 h-14">
           {/* Animated Stroke Circles */}
           <motion.div
-            className="absolute inset-0 border border-white/20 rounded-full"
+            className="absolute inset-0 border border-divider rounded-full"
             animate={{ scale: [1, 1.6], opacity: [0.4, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
           />
           <motion.div
-            className="absolute inset-0 border border-white/10 rounded-full"
+            className="absolute inset-0 border border-divider rounded-full"
             animate={{ scale: [1, 2], opacity: [0.2, 0] }}
             transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeOut" }}
           />
 
           {/* Main Core */}
-          <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-3 rounded-full hover:bg-white/10 transition-all duration-500 shadow-2xl relative z-10 overflow-hidden">
+          <div className="bg-white/[0.03] backdrop-blur-xl border border-divider p-3 rounded-full hover:bg-white/10 transition-all duration-500 shadow-2xl relative z-10 overflow-hidden">
             {/* Waveform SVG */}
             <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-white" stroke="currentColor" strokeWidth="1">
               <path d="M3 12h2M7 8v8M11 4v16M15 8v8M19 12h2" strokeLinecap="round" />

@@ -5,14 +5,21 @@ This document serves as the single source of truth for the EmpathoAI brand acros
 ## 🎨 Design System (Visual Identity)
 
 ### Colors
-- **Void (Primary):** `#030303` (Deep Black)
-- **Noise (Secondary):** `#666666` (Grey)
-- **Institutional (Base):** `#FFFFFF` (White)
+Each color has a strict functional role. No decorative use. No gradients. No additional colors.
+- **Black (#0B0B0C):** Primary background. Structure and containment.
+- **Black 2 (#1A1A1D):** Secondary surfaces. Blocks and containers.
+- **Divider (#2A2F36):** Separation only. Never decorative.
+- **White (#F5F5F5):** Headlines. Clarity layer. Highest hierarchy.
+- **Gray High (#8A8F98):** Body text. Supporting explanation.
+- **Gray Mid (#7A8087):** Labels, metadata, secondary structure.
+- **Orange (#C56A1A):** Decision trigger. Key words, CTAs, critical emphasis. Max 5–10%.
 
 ### Typography
-- **Headings:** `Montserrat` (with `brutal-heading` transformation)
-- **Body:** `Inter` (300 weight preferred)
-- **Mono:** `Roboto Mono` (for technical details)
+- **Universal Font:** `Helvetica Now` (or fallback to standard `Helvetica`/sans-serif). We do not use other fonts.
+- **H1:** Bold 700
+- **H2:** Medium 500
+- **Body:** Regular 400
+- **Label / Meta:** Light 300 (with `tracking-label` letter-spacing)
 
 ### UI Elements
 - **Brutalism:** Focus on raw, bold elements.

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const NotFound: React.FC = () => {
   return (
-    <div className="min-h-screen bg-void flex flex-col items-center justify-center p-6 text-center select-none overflow-hidden relative">
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 text-center select-none overflow-hidden relative">
       {/* Background Neural Void Decoration */}
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none">
         <span className="font-inter font-extrabold text-[40vw] leading-none uppercase tracking-tighter">NULL_ADDR</span>
@@ -30,9 +30,9 @@ const NotFound: React.FC = () => {
               repeatType: "mirror",
             }}
           >
-            <span className="text-noise font-mono mr-2 md:mr-4">[</span>
+            <span className="text-gray-mid font-mono mr-2 md:mr-4">[</span>
             404
-            <span className="text-noise font-mono ml-2 md:ml-4">]</span>
+            <span className="text-gray-mid font-mono ml-2 md:ml-4">]</span>
           </motion.h1>
         </motion.div>
 
@@ -50,14 +50,14 @@ const NotFound: React.FC = () => {
             repeatDelay: 3
           }}
         >
-          <span className="text-noise font-mono mr-2 md:mr-4">[</span>404<span className="text-noise font-mono ml-2 md:ml-4">]</span>
+          <span className="text-gray-mid font-mono mr-2 md:mr-4">[</span>404<span className="text-gray-mid font-mono ml-2 md:ml-4">]</span>
         </motion.div>
       </div>
 
       {/* Text Content */}
       <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
         <div className="space-y-4">
-          <h2 className="font-mono text-sm md:text-lg text-noise uppercase tracking-[0.4em]">
+          <h2 className="font-mono text-sm md:text-lg text-gray-mid uppercase tracking-[0.4em]">
             // Protocol Not Found.
           </h2>
           <p className="font-montserrat font-light text-lg md:text-xl text-white/50 leading-relaxed text-balance">
@@ -80,7 +80,7 @@ const NotFound: React.FC = () => {
 
       {/* Terminal Status Overlay */}
       <div className="absolute bottom-12 left-12 hidden md:block opacity-30">
-        <p className="font-mono text-[10px] text-noise uppercase tracking-[0.3em] vertical-rl rotate-180">
+        <p className="font-mono text-[10px] text-gray-mid uppercase tracking-[0.3em] vertical-rl rotate-180">
           ERR_CON_TERMINATED // 0x00000404
         </p>
       </div>
