@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -8,7 +7,6 @@ const CookieBanner: React.FC = () => {
   useEffect(() => {
     const consent = localStorage.getItem('empathoai_cookie_consent');
     if (!consent) {
-      // Trigger subtle entry after 2 seconds of session initialization
       const timer = setTimeout(() => setIsVisible(true), 2000);
       return () => clearTimeout(timer);
     }
@@ -38,7 +36,7 @@ const CookieBanner: React.FC = () => {
               <div className="flex justify-start">
                 <button
                   onClick={handleAccept}
-                  className="bg-white text-black text-[10px] font-mono font-bold uppercase px-4 py-2 hover:bg-zinc-200 transition-colors tracking-widest rounded-md"
+                  className="bg-[#C56A1A] text-white text-[10px] font-mono font-bold uppercase px-4 py-2 hover:bg-[#D97724] transition-colors tracking-widest rounded-md"
                 >
                   Accept
                 </button>

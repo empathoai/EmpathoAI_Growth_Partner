@@ -22,6 +22,10 @@ const SEO: React.FC = () => {
                 title: 'Why Your Business Is Not Growing | Fix Your System',
                 description: 'Your business is not growing because your system is broken. Identify what is slowing growth and fix it.'
             },
+            '/about': {
+                title: 'About EmpathoAI | Growth Architecture',
+                description: 'EmpathoAI diagnoses why businesses don’t grow and builds the system to fix it.'
+            },
             '/why-your-business-is-not-growing': {
                 title: 'Why Your Business Is Not Growing | EmpathoAI',
                 description: 'If your business is not growing, the issue is not marketing. It is your system. Learn what is broken and how to fix it.'

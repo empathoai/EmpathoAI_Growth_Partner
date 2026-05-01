@@ -13,6 +13,7 @@ import CookiePolicy from './components/CookiePolicy';
 import CookieBanner from './components/CookieBanner';
 import SEO from './components/SEO';
 import WhyBusinessNotGrowing from './components/WhyBusinessNotGrowing';
+import AboutPage from './components/AboutPage';
 
 const MotionDiv = motion.div as any;
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
   const isTermsOpen = location.pathname === '/terms-of-service';
   const isCookieOpen = location.pathname === '/cookie-policy';
   const isWhyPageOpen = location.pathname === '/why-your-business-is-not-growing';
+  const isAboutPageOpen = location.pathname === '/about';
 
   useEffect(() => {
     const legacyPaths = [
@@ -68,6 +70,8 @@ const App: React.FC = () => {
       >
         {isWhyPageOpen ? (
           <WhyBusinessNotGrowing onCtaClick={toggleForm} />
+        ) : isAboutPageOpen ? (
+          <AboutPage onCtaClick={toggleForm} />
         ) : (
           <>
             <Hero onCtaClick={toggleForm} />
@@ -92,9 +96,15 @@ const App: React.FC = () => {
 
         <footer className="px-6 py-12 md:px-24 md:py-16 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-helvetica font-light text-[10px] md:text-xs text-[#C56A1A] uppercase tracking-label">
-            © 2024 EmpathoAI Growth Arquitecture. All Rights Reserved.
+            2024 EmpathoAI Growth Arquitecture. All Rights Reserved.
           </div>
           <div className="flex gap-8 font-helvetica font-light text-[10px] md:text-xs text-[#C56A1A] uppercase tracking-label">
+            <Link
+              to="/about"
+              className="hover:text-white transition-colors duration-300 underline underline-offset-4"
+            >
+              About
+            </Link>
             <Link
               to="/privacy-policy"
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
@@ -125,3 +135,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
