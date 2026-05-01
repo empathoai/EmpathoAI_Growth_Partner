@@ -9,7 +9,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   const maskTransition = { duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };
 
   return (
-    <section className="relative min-h-screen md:min-h-screen flex flex-col justify-center px-6 md:px-24 py-20 md:py-24 overflow-hidden border-b border-white/15 bg-[#0B0B0C]">
+    <section className="relative h-[100svh] md:min-h-screen flex flex-col justify-center px-6 md:px-24 pt-16 pb-8 md:py-24 overflow-hidden border-b border-white/15 bg-[#0B0B0C]">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.div
           className="w-full h-full bg-cover bg-center opacity-80"
@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1600px] pt-52 md:pt-40">
+      <div className="relative z-10 w-full max-w-[1600px] flex min-h-0 flex-1 flex-col pt-40 md:pt-40">
         <div className="max-w-[20rem] md:max-w-none space-y-1 md:space-y-0 text-balance">
           <div className="overflow-hidden">
             <motion.h1
@@ -68,12 +68,12 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </div>
 
         <motion.div
-          className="mt-24 md:mt-20 flex flex-col items-start gap-12 md:gap-12"
+          className="mt-auto flex flex-col items-start gap-6 md:mt-20 md:gap-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.8 }}
         >
-          <div className="max-w-[21rem] md:max-w-[720px] space-y-7 md:space-y-6 font-helvetica font-medium text-[2rem] md:text-2xl text-[#8A8F98] leading-[1.5] md:leading-relaxed text-balance">
+          <div className="mt-10 max-w-[18rem] md:mt-0 md:max-w-[720px] space-y-5 md:space-y-6 font-helvetica font-medium text-[1.4rem] md:text-2xl text-[#8A8F98] leading-[1.45] md:leading-relaxed text-balance">
             <p>
               We identify what is slowing your growth
               <br />
@@ -86,7 +86,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             </p>
           </div>
 
-          <div className="mt-2 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 w-full md:w-auto">
+          <div className="mt-1 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 w-full md:w-auto">
             <button
               onClick={onCtaClick}
               className="institutional-btn shimmer-active flex items-center justify-center bg-[#C56A1A] text-[#F5F5F5] px-8 py-6 md:px-12 md:py-8 font-helvetica font-bold uppercase text-sm md:text-lg w-full md:w-auto"
