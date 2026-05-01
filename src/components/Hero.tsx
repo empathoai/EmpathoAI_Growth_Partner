@@ -44,24 +44,24 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             </motion.h1>
           </div>
           <div className="overflow-hidden">
-            <motion.h1
+            <motion.h2
               className="font-helvetica font-bold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.0] md:leading-[0.9] text-[#F5F5F5]"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.2 }}
             >
               IS <span className="text-[#C56A1A]">NOT</span> STUCK.
-            </motion.h1>
+            </motion.h2>
           </div>
           <div className="overflow-hidden">
-            <motion.h1
+            <motion.h2
               className="font-helvetica font-bold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.0] md:leading-[0.9] text-[#F5F5F5]"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.3 }}
             >
               YOUR <span className="text-[#C56A1A]">SYSTEM</span> IS.
-            </motion.h1>
+            </motion.h2>
           </div>
         </div>
 

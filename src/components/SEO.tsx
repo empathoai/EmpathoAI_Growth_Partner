@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -7,7 +6,6 @@ const SEO: React.FC = () => {
     const baseUrl = 'https://empathoai.com';
 
     useEffect(() => {
-        // 1. Manage Canonical Tag
         let link: HTMLLinkElement | null = document.querySelector("link[rel='canonical']");
 
         if (!link) {
@@ -16,23 +14,49 @@ const SEO: React.FC = () => {
             document.head.appendChild(link);
         }
 
-        // Construct full canonical URL without trailing slash (unless it's the root)
         const path = location.pathname === '/' ? '' : location.pathname;
         link.setAttribute('href', `${baseUrl}${path}`);
 
-        // 2. Dynamic Title updates (optional but good for UX/SEO)
-        const routeTitles: Record<string, string> = {
-            '/': 'EmpathoAI | Sovereign Growth Partner',
-            '/privacy-policy': 'Privacy Protocol | EmpathoAI',
-            '/terms-of-service': 'Terms of Service | EmpathoAI',
-            '/cookie-policy': 'Cookie Governance | EmpathoAI'
+        const routeMeta: Record<string, { title: string; description: string }> = {
+            '/': {
+                title: 'Why Your Business Is Not Growing | Fix Your System',
+                description: 'Your business is not growing because your system is broken. Identify what is slowing growth and fix it.'
+            },
+            '/why-your-business-is-not-growing': {
+                title: 'Why Your Business Is Not Growing | EmpathoAI',
+                description: 'If your business is not growing, the issue is not marketing. It is your system. Learn what is broken and how to fix it.'
+            },
+            '/privacy-policy': {
+                title: 'Privacy Protocol | EmpathoAI',
+                description: 'EmpathoAI privacy protocol and data governance information.'
+            },
+            '/terms-of-service': {
+                title: 'Terms of Service | EmpathoAI',
+                description: 'EmpathoAI terms of service and partnership protocol.'
+            },
+            '/cookie-policy': {
+                title: 'Cookie Governance | EmpathoAI',
+                description: 'EmpathoAI cookie protocol and technological tracking information.'
+            }
         };
 
-        document.title = routeTitles[location.pathname] || 'EmpathoAI | Sovereign Infrastructure';
+        const meta = routeMeta[location.pathname] || {
+            title: 'EmpathoAI | Sovereign Infrastructure',
+            description: 'EmpathoAI growth infrastructure.'
+        };
 
+        document.title = meta.title;
+
+        let metaDescription: HTMLMetaElement | null = document.querySelector("meta[name='description']");
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.setAttribute('name', 'description');
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.setAttribute('content', meta.description);
     }, [location]);
 
-    return null; // This component doesn't render any UI
+    return null;
 };
 
 export default SEO;

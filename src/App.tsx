@@ -12,6 +12,7 @@ import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
 import CookieBanner from './components/CookieBanner';
 import SEO from './components/SEO';
+import WhyBusinessNotGrowing from './components/WhyBusinessNotGrowing';
 
 const MotionDiv = motion.div as any;
 
@@ -23,6 +24,7 @@ const App: React.FC = () => {
   const isPolicyOpen = location.pathname === '/privacy-policy';
   const isTermsOpen = location.pathname === '/terms-of-service';
   const isCookieOpen = location.pathname === '/cookie-policy';
+  const isWhyPageOpen = location.pathname === '/why-your-business-is-not-growing';
 
   useEffect(() => {
     const legacyPaths = [
@@ -64,23 +66,29 @@ const App: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10"
       >
-        <Hero onCtaClick={toggleForm} />
-        <SectorDominance />
-        <Methodology />
-        <section className="px-6 py-20 md:px-24 md:py-24 border-b border-white/15 bg-[#0B0B0C]">
-          <div className="max-w-[1600px] mx-auto text-center">
-            <p className="font-helvetica font-bold text-4xl sm:text-6xl md:text-[6.5rem] uppercase leading-[0.9] text-[#F5F5F5]">
-              IF YOU RECOGNIZE YOUR <span className="text-[#C56A1A]">BUSINESS</span> IN THIS,
-              <br />
-              THE PROBLEM IS NOT <span className="text-[#C56A1A]">EFFORT</span>.
-              <br />
-              <br />
-              IT IS <span className="text-[#C56A1A]">STRUCTURE</span>.
-            </p>
-          </div>
-        </section>
-        <Guarantee onCtaClick={toggleForm} />
-        <FAQ />
+        {isWhyPageOpen ? (
+          <WhyBusinessNotGrowing onCtaClick={toggleForm} />
+        ) : (
+          <>
+            <Hero onCtaClick={toggleForm} />
+            <SectorDominance />
+            <Methodology />
+            <section className="px-6 py-20 md:px-24 md:py-24 border-b border-white/15 bg-[#0B0B0C]">
+              <div className="max-w-[1600px] mx-auto text-center">
+                <p className="font-helvetica font-bold text-4xl sm:text-6xl md:text-[6.5rem] uppercase leading-[0.9] text-[#F5F5F5]">
+                  IF YOU RECOGNIZE YOUR <span className="text-[#C56A1A]">BUSINESS</span> IN THIS,
+                  <br />
+                  THE PROBLEM IS NOT <span className="text-[#C56A1A]">EFFORT</span>.
+                  <br />
+                  <br />
+                  IT IS <span className="text-[#C56A1A]">STRUCTURE</span>.
+                </p>
+              </div>
+            </section>
+            <Guarantee onCtaClick={toggleForm} />
+            <FAQ />
+          </>
+        )}
 
         <footer className="px-6 py-12 md:px-24 md:py-16 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-helvetica font-light text-[10px] md:text-xs text-[#C56A1A] uppercase tracking-label">
