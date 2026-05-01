@@ -69,7 +69,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onCtaClick }) => {
             <p>
               Built by Alex Guajardo.
               <br />
-              20+ years inside Coca-Cola and Nestl{'é'}.
+              20+ years inside Coca-Cola and Nestle.
             </p>
             <p>
               Fixing how businesses actually <span className="text-[#C56A1A]">grow</span>.{' '}
@@ -123,4 +123,5 @@ const AboutPage: React.FC<AboutPageProps> = ({ onCtaClick }) => {
 };
 
 export default AboutPage;
+
 
