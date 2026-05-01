@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           animate={{ scale: 1.0 }}
           transition={{ duration: 25, ease: 'linear' }}
           style={{
-            backgroundImage: `url('/images/hero-system-architecture.png')`,
+            backgroundImage: `url('/images/hero-system-architecture-v2.png')`,
             filter: 'contrast(1.02) brightness(0.82) grayscale(0.18)'
           }}
         />
@@ -101,3 +101,4 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 };
 
 export default Hero;
+
