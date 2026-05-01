@@ -18,9 +18,11 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           transition={{ duration: 25, ease: 'linear' }}
           style={{
             backgroundImage: `url('/images/hero-system-architecture.png')`,
-            filter: 'contrast(1.1) brightness(0.95) grayscale(0.15)'
+            filter: 'contrast(1.02) brightness(0.82) grayscale(0.18)'
           }}
         />
+        <div className="absolute inset-0 bg-black/10 md:bg-transparent" />
+        <div className="absolute inset-y-0 left-0 w-full md:hidden bg-gradient-to-r from-black/18 via-black/10 to-transparent" />
       </div>
 
       <div className="absolute top-24 left-6 md:top-28 md:left-24 z-20">
@@ -31,11 +33,11 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1600px] pt-36 md:pt-40">
-        <div className="space-y-0 text-balance leading-tight">
+      <div className="relative z-10 w-full max-w-[1600px] pt-52 md:pt-40">
+        <div className="max-w-[20rem] md:max-w-none space-y-1 md:space-y-0 text-balance">
           <div className="overflow-hidden">
             <motion.h1
-              className="font-helvetica font-bold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.0] md:leading-[0.9] text-[#F5F5F5]"
+              className="font-helvetica font-bold text-[3.35rem] sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.06] md:leading-[0.9] tracking-[-0.03em] md:tracking-normal text-[#F5F5F5]"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.1 }}
@@ -45,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </div>
           <div className="overflow-hidden">
             <motion.h2
-              className="font-helvetica font-bold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.0] md:leading-[0.9] text-[#F5F5F5]"
+              className="font-helvetica font-bold text-[3.35rem] sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.06] md:leading-[0.9] tracking-[-0.03em] md:tracking-normal text-[#F5F5F5]"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.2 }}
@@ -55,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </div>
           <div className="overflow-hidden">
             <motion.h2
-              className="font-helvetica font-bold text-4xl sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.0] md:leading-[0.9] text-[#F5F5F5]"
+              className="font-helvetica font-bold text-[3.35rem] sm:text-5xl md:text-[6rem] lg:text-[7rem] uppercase leading-[1.06] md:leading-[0.9] tracking-[-0.03em] md:tracking-normal text-[#F5F5F5]"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ ...maskTransition, delay: 0.3 }}
@@ -66,19 +68,25 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </div>
 
         <motion.div
-          className="mt-20 flex flex-col items-start gap-10 md:gap-12"
+          className="mt-24 md:mt-20 flex flex-col items-start gap-12 md:gap-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.8 }}
         >
-          <p className="font-helvetica font-medium text-2xl max-w-[720px] text-[#8A8F98] text-balance leading-relaxed">
-            We identify what is slowing your growth<br className="hidden md:block" />
-            before you invest more time or money.
-            <br className="hidden md:block" />
-            For companies already generating revenue that need to fix how they grow.
-          </p>
+          <div className="max-w-[21rem] md:max-w-[720px] space-y-7 md:space-y-6 font-helvetica font-medium text-[2rem] md:text-2xl text-[#8A8F98] leading-[1.5] md:leading-relaxed text-balance">
+            <p>
+              We identify what is slowing your growth
+              <br />
+              before you invest more time or money.
+            </p>
+            <p>
+              For companies already generating revenue
+              <br />
+              that need to fix how they grow.
+            </p>
+          </div>
 
-          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 w-full md:w-auto">
+          <div className="mt-2 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 w-full md:w-auto">
             <button
               onClick={onCtaClick}
               className="institutional-btn shimmer-active flex items-center justify-center bg-[#C56A1A] text-[#F5F5F5] px-8 py-6 md:px-12 md:py-8 font-helvetica font-bold uppercase text-sm md:text-lg w-full md:w-auto"
