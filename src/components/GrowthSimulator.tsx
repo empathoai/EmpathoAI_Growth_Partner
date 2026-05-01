@@ -162,7 +162,7 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
         >
           <div className="relative mb-8 md:mb-10 flex items-center justify-start">
             <img
-              src="/logo_empathoai.svg"
+              src="/logo_empathoai-v2.svg"
               alt="EmpathoAI"
               className="h-10 md:h-12 w-auto"
             />
@@ -366,3 +366,4 @@ const GrowthSimulator: React.FC<GrowthSimulatorProps> = ({ onClose }) => {
 };
 
 export default GrowthSimulator;
+

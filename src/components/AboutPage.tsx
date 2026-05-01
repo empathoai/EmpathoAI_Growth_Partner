@@ -15,7 +15,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onCtaClick }) => {
         <div className="absolute top-24 left-6 md:top-28 md:left-24 z-20">
           <Link to="/" aria-label="Go to homepage" className="inline-block">
             <img
-              src="/logo_empathoai.svg"
+              src="/logo_empathoai-v2.svg"
               alt="EmpathoAI"
               className="h-20 md:h-[5.5rem] w-auto"
             />
@@ -123,5 +123,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ onCtaClick }) => {
 };
 
 export default AboutPage;
+
 
 

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 
@@ -16,7 +16,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onClose }) => {
     >
       <div className="absolute top-24 left-6 md:top-28 md:left-24 z-20">
         <img
-          src="/logo_empathoai.svg"
+          src="/logo_empathoai-v2.svg"
           alt="EmpathoAI"
           className="h-20 md:h-[5.5rem] w-auto"
         />
@@ -102,7 +102,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onClose }) => {
 
         <footer className="pt-12 border-t border-divider">
           <p className="font-helvetica font-light text-sm text-gray-mid uppercase tracking-label">
-            © 2026 EmpathoAI, LLC | Registered in Wyoming, USA.
+            � 2026 EmpathoAI, LLC | Registered in Wyoming, USA.
           </p>
         </footer>
       </div>
@@ -111,5 +111,6 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onClose }) => {
 };
 
 export default TermsOfService;
+
 
 

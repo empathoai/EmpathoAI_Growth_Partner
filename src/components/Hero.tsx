@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
       <div className="absolute top-16 left-6 md:top-28 md:left-24 z-20">
         <img
-          src="/logo_empathoai.svg"
+          src="/logo_empathoai-v2.svg"
           alt="EmpathoAI"
           className="h-20 md:h-[5.5rem] w-auto"
         />
@@ -101,4 +101,5 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 };
 
 export default Hero;
+
 
