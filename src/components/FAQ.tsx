@@ -81,7 +81,7 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-40 px-6 md:px-24 bg-black border-b border-white/15">
+    <section className="py-20 md:py-40 px-6 md:px-24 bg-[#0B0B0C] border-b border-white/15">
       <div className="max-w-[1600px] mx-auto">
         <div className="mb-20 md:mb-32">
           <p className="font-helvetica font-bold text-4xl sm:text-6xl md:text-[6.5rem] uppercase leading-none text-[#F5F5F5]">
@@ -106,3 +106,4 @@ const FAQ: React.FC = () => {
 };
 
 export default FAQ;
+

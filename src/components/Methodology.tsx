@@ -30,7 +30,7 @@ const phases = [
 
 const Methodology: React.FC = () => {
   return (
-    <section className="py-24 md:py-40 px-6 md:px-24 border-b border-white/15 bg-black">
+    <section className="py-24 md:py-40 px-6 md:px-24 border-b border-white/15 bg-[#0B0B0C]">
       <div className="max-w-[1600px] mx-auto">
         <div className="mb-24 md:mb-36">
           <p className="font-helvetica font-bold text-4xl sm:text-6xl md:text-[6.5rem] uppercase leading-[0.9] text-[#F5F5F5]">HOW WE WORK</p>
@@ -40,7 +40,7 @@ const Methodology: React.FC = () => {
           {phases.map((phase, idx) => (
             <motion.div
               key={idx}
-              className="bg-black p-12 md:p-20 flex flex-col justify-between min-h-[460px] md:min-h-[560px] hover:bg-white/[0.05] backdrop-blur-sm transition-colors duration-700"
+              className="bg-[#0B0B0C] p-12 md:p-20 flex flex-col justify-between min-h-[460px] md:min-h-[560px] hover:bg-white/[0.05] backdrop-blur-sm transition-colors duration-700"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -66,4 +66,7 @@ const Methodology: React.FC = () => {
 };
 
 export default Methodology;
+
+
+
 

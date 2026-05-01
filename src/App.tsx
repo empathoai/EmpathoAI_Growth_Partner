@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
@@ -20,14 +19,11 @@ const App: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  // Derived states from routing
   const isPolicyOpen = location.pathname === '/privacy-policy';
   const isTermsOpen = location.pathname === '/terms-of-service';
   const isCookieOpen = location.pathname === '/cookie-policy';
 
-  // Redirection Layer for Legacy GSC URLs
   useEffect(() => {
     const legacyPaths = [
       '/contact',
@@ -41,22 +37,10 @@ const App: React.FC = () => {
       navigate('/', { replace: true });
     }
 
-    // Also redirect any www to non-www if captured by SPA (though usually handled by DNS/Proxy)
     if (window.location.hostname.startsWith('www.')) {
       window.location.replace(`https://empathoai.com${location.pathname}${location.search}`);
     }
   }, [location, navigate]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const toggleForm = useCallback(() => {
     setIsFormOpen(prev => !prev);
@@ -69,49 +53,16 @@ const App: React.FC = () => {
   const isAnyOverlayOpen = isFormOpen || isPolicyOpen || isTermsOpen || isCookieOpen;
 
   return (
-    <div className="relative min-h-screen bg-black selection:bg-white selection:text-black overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#0B0B0C] selection:bg-white selection:text-black overflow-x-hidden">
       <SEO />
-      {/* Sovereign Ghost Navigation */}
-      <nav
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 px-6 md:px-12 py-5 flex justify-between items-center ${scrolled
-          ? 'bg-black/50 backdrop-blur-md border-b border-white/12 py-4'
-          : 'bg-transparent border-b border-transparent'
-          }`}
-      >
-        <div className="flex flex-col md:flex-row md:items-center gap-0 md:gap-4">
-          <div className="font-helvetica font-light text-[10px] text-gray-mid uppercase tracking-label leading-none">
-            EMPATHO_FRAMEWORK_v2.0
-          </div>
-          {/* Extended Navigation */}
-          <div className="hidden lg:flex items-center gap-8 ml-8">
-            <span className="font-helvetica font-light text-[10px] text-white/40 uppercase tracking-label hover:text-white transition-colors cursor-pointer">
-              Partner_Audit
-            </span>
-            <span className="font-helvetica font-light text-[10px] text-white/40 uppercase tracking-label hover:text-white transition-colors cursor-pointer">
-              Methodology
-            </span>
-            <span className="font-helvetica font-light text-[10px] text-white/40 uppercase tracking-label hover:text-white transition-colors cursor-pointer">
-              Success_Criteria
-            </span>
-          </div>
-        </div>
 
-        <button
-          onClick={toggleForm}
-          className="institutional-btn font-helvetica font-light text-[10px] md:text-xs uppercase tracking-label px-4 py-2 hover:bg-white hover:text-black transition-all duration-500 whitespace-nowrap"
-        >
-          REQUEST DIAGNOSIS
-        </button>
-      </nav>
-
-      {/* Main Content */}
       <MotionDiv
         animate={{
           opacity: isAnyOverlayOpen ? 0 : 1,
           scale: isAnyOverlayOpen ? 0.98 : 1
         }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 pt-16"
+        className="relative z-10"
       >
         <Hero onCtaClick={toggleForm} />
         <SectorDominance />
@@ -120,10 +71,10 @@ const App: React.FC = () => {
         <FAQ />
 
         <footer className="px-6 py-12 md:px-24 md:py-16 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="font-helvetica font-light text-[10px] md:text-xs text-gray-mid uppercase tracking-label">
-            Â© 2024 EmpathoAI Growth Partner. All Rights Reserved.
+          <div className="font-helvetica font-light text-[10px] md:text-xs text-[#C56A1A] uppercase tracking-label">
+            © 2024 EmpathoAI Growth Arquitecture. All Rights Reserved.
           </div>
-          <div className="flex gap-8 font-helvetica font-light text-[10px] md:text-xs text-gray-mid uppercase tracking-label">
+          <div className="flex gap-8 font-helvetica font-light text-[10px] md:text-xs text-[#C56A1A] uppercase tracking-label">
             <Link
               to="/privacy-policy"
               className="hover:text-white transition-colors duration-300 underline underline-offset-4"
@@ -140,7 +91,6 @@ const App: React.FC = () => {
         </footer>
       </MotionDiv>
 
-      {/* Overlays */}
       <AnimatePresence mode="wait">
         {isFormOpen && <GrowthSimulator onClose={() => setIsFormOpen(false)} />}
       </AnimatePresence>
@@ -155,9 +105,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-
-
-
-
-
