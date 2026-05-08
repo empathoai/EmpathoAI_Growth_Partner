@@ -1,0 +1,12 @@
+---
+description: Reglas de infraestructura técnica para el ecosistema EmpathoAI.
+globs: "**/*.{ts,tsx,css}"
+alwaysApply: true
+---
+
+# Architecture Rules
+
+- **TypeScript**: `strict: true` es obligatorio. No se permite `any`.
+- **CSS Strategy**: Usar `@layer` para organizar estilos: `theme`, `base`, `components`, `utilities`.
+- **Layout**: Usar CSS Grid para la estructura principal y Flexbox para micro-layouts.
+- **Responsividad**: Priorizar `clamp()` para tipografía fluida y Container Queries (`@container`) para componentes modulares.

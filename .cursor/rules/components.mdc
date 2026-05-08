@@ -1,0 +1,12 @@
+---
+description: Aplicación estricta de la Doctrina Zero-Radius en componentes de interfaz.
+globs: "src/components/**/*.tsx"
+---
+
+# Component Rules
+
+- **Geometría**: `border-radius: 0 !important`. No se permiten curvas.
+- **Bordes**: Usar `1px solid var(--hairline)` para límites estructurales.
+- **Sombra**: Prohibido el uso de `box-shadow`.
+- **Semántica**: Usar elementos HTML5 semánticos.
+- **Interactividad**: Los estados `:hover` y `:active` deben usar cambios tonales (`--graphite-soft`), no cambios de forma.

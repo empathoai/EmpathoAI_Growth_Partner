@@ -1,0 +1,69 @@
+@theme {
+  /* Source of Truth: DESIGN.md - EmpathoAI Industrial Dark System */
+  
+  /* Graphite Palette (Dark Mode Foundations) */
+  --color-canvas: #0A0A0B;
+  --color-surface-deep: #1A1A1C;
+  --color-surface-mid: #2D2D2F;
+  --color-border: #3F3F41;
+  --color-hairline: #2D2D2F;
+  
+  /* Semantic Operation Token (Precisión Quirúrgica) */
+  --color-accent: #FF4402;
+  --color-on-accent: #0A0A0B;
+  --color-ink: #FF4402; /* Override: Industrial ink token calibrated to Electric Orange */
+
+  /* Typography Neutrals (Optimizados para fondo oscuro) */
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #8E8E93;
+  --color-text-muted: #767676;
+
+  /* Typography Stack - High-Fidelity & Fallbacks */
+  --font-display: "EmpathoAI Futura ND", "Bebas Neue", sans-serif;
+  --font-heading: "Helvetica Now Display Medium", "Inter", sans-serif;
+  --font-text: "Helvetica Now Text", "Inter", sans-serif;
+  --font-text-medium: "Helvetica Now Text Medium", "Inter", sans-serif;
+  --font-utility: "Helvetica Neue", "Inter", sans-serif;
+
+  /* Typography Scale */
+  --size-display: 96px;
+  --weight-display: 500;
+  --leading-display: 1.1;
+
+  --size-heading-xl: 32px;
+  --size-heading-lg: 24px;
+  --size-heading-md: 16px;
+  --weight-heading: 500;
+  --leading-heading: 1.2;
+
+  --size-body-md: 16px;
+  --size-body-strong: 16px;
+  --weight-body: 400;
+  --weight-body-strong: 500;
+  --leading-body: 1.5;
+
+  --size-button-lg: 24px;
+  --size-button-md: 16px;
+  --size-button-sm: 14px;
+  
+  --size-caption-md: 14px;
+  --size-caption-sm: 12px;
+  
+  --size-utility-xs: 9px;
+  --leading-utility: 1.75;
+
+  /* Spacing System (Base 8px) */
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-section: 64px;
+
+  /* Geometry: Industrial Sharp Protocol (Rigor industrial) */
+  --radius-none: 0px;
+  
+  /* Hairline */
+  --hairline: 1px;
+}

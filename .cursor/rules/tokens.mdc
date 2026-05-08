@@ -1,0 +1,10 @@
+---
+description: Control de la restricción cromática extrema y uso de tokens.
+globs: "src/tokens/**/*.css"
+---
+
+# Token Rules
+
+- **Colores**: Solo se permiten colores definidos en `DESIGN.md`.
+- **Contraste**: Validar WCAG AA (4.5:1) en cada par de color (fondo/texto).
+- **Escalado**: Los espaciados deben seguir la progresión base de 8px (xs: 4px, sm: 8px, md: 16px...).

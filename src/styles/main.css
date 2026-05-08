@@ -1,0 +1,246 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './tokens.css';
+
+@layer base {
+  body {
+    @apply bg-canvas text-text-primary antialiased;
+    font-family: var(--font-text);
+    font-size: var(--size-body-md);
+    line-height: var(--leading-body);
+  }
+
+  /* Rule 82 & 83: High-visibility focus indicators (2px minimum) */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-canvas;
+  }
+
+  /* EmpathoAI Geometry Rule: Everything is sharp (Industrial Protocol) */
+  div,
+  section,
+  article,
+  nav,
+  footer,
+  header {
+    @apply rounded-none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Default Headings */
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--size-heading-xl);
+    font-weight: var(--weight-heading);
+    line-height: var(--leading-heading);
+    @apply uppercase;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--size-heading-lg);
+    font-weight: var(--weight-heading);
+    line-height: var(--leading-heading);
+  }
+
+  /* Dropdown Styling for Industrial Authority */
+  select option {
+    @apply bg-surface-deep text-text-primary;
+  }
+}
+
+@layer components {
+
+  /* EmpathoAI Industrial Tiers */
+  .display-campaign {
+    font-family: var(--font-display);
+    font-weight: var(--weight-display);
+    line-height: 0.9;
+    @apply text-[16vw] md:text-[160px] lg:text-[220px] uppercase;
+    letter-spacing: -0.04em;
+  }
+
+  .heading-xl {
+    font-family: var(--font-heading);
+    font-size: var(--size-heading-xl);
+    font-weight: var(--weight-heading);
+    line-height: var(--leading-heading);
+  }
+
+  .heading-lg {
+    font-family: var(--font-heading);
+    font-size: var(--size-heading-lg);
+    font-weight: var(--weight-heading);
+    line-height: var(--leading-heading);
+  }
+
+  .heading-md {
+    font-family: var(--font-heading);
+    font-size: var(--size-heading-md);
+    font-weight: var(--weight-heading);
+    line-height: 1.75;
+  }
+
+  .body-md {
+    font-family: var(--font-text);
+    font-size: var(--size-body-md);
+    font-weight: var(--weight-body);
+    line-height: var(--leading-body);
+  }
+
+  .body-strong {
+    font-family: var(--font-text-medium);
+    font-size: var(--size-body-strong);
+    font-weight: var(--weight-body-strong);
+    line-height: var(--leading-body);
+  }
+
+  /* Industrial Hero Tier Enhancements */
+  .hero-lead {
+    font-family: var(--font-text-medium);
+    @apply text-[11px] md:text-sm lg:text-base text-text-secondary leading-[1.6] tracking-[0.15em] uppercase;
+  }
+
+  .hero-context {
+    font-family: var(--font-text);
+    @apply text-sm md:text-lg text-text-secondary max-w-lg;
+  }
+
+  /* Buttons: Industrial Sharp Geometry (Updated Doctrine) */
+  .btn-primary {
+    @apply bg-accent text-on-accent px-xl py-md inline-flex items-center justify-center transition-all duration-300 border border-accent rounded-none;
+    font-family: var(--font-text-medium);
+    font-size: var(--size-button-md);
+    font-weight: 500;
+    line-height: 1.5;
+    @apply uppercase tracking-widest;
+  }
+
+  .btn-primary:hover {
+    @apply bg-transparent text-accent -translate-y-[1px];
+  }
+
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-outline-on-image:active {
+    @apply scale-[0.98] opacity-90 translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-accent px-xl py-md inline-flex items-center justify-center transition-all duration-300 border border-accent rounded-none;
+    font-family: var(--font-text-medium);
+    font-size: var(--size-button-md);
+    font-weight: 500;
+    line-height: 1.5;
+    @apply uppercase tracking-widest;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-accent text-on-accent -translate-y-[1px];
+  }
+
+  .btn-outline-on-image {
+    @apply bg-accent text-on-accent px-xl py-md inline-flex items-center justify-center transition-all duration-300 border border-accent rounded-none;
+    font-family: var(--font-text-medium);
+    font-size: var(--size-button-md);
+    font-weight: 500;
+    line-height: 1.5;
+    @apply uppercase tracking-widest;
+  }
+
+  .btn-outline-on-image:hover {
+    @apply bg-transparent text-accent -translate-y-[1px];
+  }
+
+  /* Product Cards: Flat, Zero Shadow (Industrial Authority) */
+  .product-card {
+    @apply bg-surface-deep p-0 rounded-none overflow-hidden;
+  }
+
+  .product-card-image {
+    @apply bg-surface-mid aspect-square w-full object-cover grayscale transition-all duration-500 hover:grayscale-0;
+  }
+
+  .product-card-metadata {
+    @apply mt-sm flex flex-col gap-xxs p-sm;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .hairline {
+    @apply border-b border-hairline;
+  }
+
+  .hairline-soft {
+    box-shadow: inset 0 -1px 0 var(--color-hairline);
+  }
+
+  /* EmpathoAI Fine Print & Telemetry */
+  .utility-xs {
+    font-family: var(--font-utility);
+    font-size: var(--size-utility-xs);
+    font-weight: 500;
+    line-height: 1.75;
+  }
+
+  .caption-sm {
+    font-family: var(--font-text-medium);
+    font-size: var(--size-caption-sm);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .caption-md {
+    font-family: var(--font-text-medium);
+    font-size: var(--size-caption-md);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .container-empatho {
+    @apply max-w-[1440px] mx-auto px-lg;
+  }
+
+  .section-rhythm {
+    @apply py-section;
+  }
+
+  .bg-highlight {
+    @apply bg-accent text-on-accent inline-block px-0 py-[0.1em];
+    line-height: 1.1;
+    vertical-align: baseline;
+  }
+
+  .bg-highlight-inline {
+    @apply bg-accent text-on-accent inline px-0 py-[0.1em];
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    line-height: 1.1;
+    vertical-align: baseline;
+  }
+
+  .bg-highlight-block {
+    @apply bg-accent text-on-accent p-4;
+  }
+}
